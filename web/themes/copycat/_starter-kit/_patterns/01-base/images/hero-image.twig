@@ -1,0 +1,11 @@
+<img
+  {% spaceless %}
+    {% if custom_classes %}
+      class="{{ custom_classes }}"
+    {% endif %}
+    src="{{ img.hero.src }}"
+    alt="{{ img.hero.alt }}"
+    {{ img.hero.height ? 'height="#{img.hero.height}"'}}
+    {{ img.hero.width ? 'width="#{img.hero.width}"'}}
+  {% endspaceless %}
+/>

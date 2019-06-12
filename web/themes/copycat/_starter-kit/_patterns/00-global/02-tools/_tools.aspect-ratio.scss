@@ -1,0 +1,9 @@
+// @file
+// Aspect Ratio mixin
+// @param {number} $width of item
+// @param {number} $height of item
+@mixin aspect-ratio($width, $height) {
+  height: 0;
+  padding-top: ($height / $width) * 100%;
+  width: 100%;
+}

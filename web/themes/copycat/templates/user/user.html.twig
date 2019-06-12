@@ -1,0 +1,12 @@
+{% embed '@layouts/section/section.twig' with {
+  'constrain': 'l-constrain',
+  'title': false
+}%}
+
+  {% block content %}
+    {% if content %}
+      {{- content -}}
+    {% endif %}
+  {% endblock %}
+
+{% endembed %}

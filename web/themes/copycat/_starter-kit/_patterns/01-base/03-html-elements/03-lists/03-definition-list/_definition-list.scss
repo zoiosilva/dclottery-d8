@@ -1,0 +1,13 @@
+// @file
+// Definition list styles.
+
+dd {
+  @extend %body-font;
+}
+
+dl {
+  @extend %body-font;
+}
+
+dt {
+}

@@ -1,0 +1,140 @@
+1:
+  url: 'http://http://www.commercekitchen.com/whedon-ipsum/'
+  title: 'You cant take the sky from me'
+  summary: |-
+    <p> We're gonna explode? I don't wanna explode. Boy, when they were handing out school spirit, you didn't even stand in line, did you? We will rule over all this land, and we will call it...This Land. It's about power and it's about women and you just hate those two words in the same sentence, don't you? Just once I would like to run into a cult of bunny worshippers. Put your words in word places please. </p>
+  img:
+    thumbnail:
+      src: 'https://picsum.photos/140/105?image=0'
+      alt: 'Thumbnail 4:3'
+    hero:
+      src: 'https://picsum.photos/1600/800?image=0'
+      alt: 'Hero 2:1'
+  year:
+    long: '2013'
+    short: '13'
+  month:
+    long: 'January'
+    short: 'Jan'
+    digit: '01'
+  weekday:
+    long: 'Sunday'
+    short: 'Sun'
+  day:
+    long: '01'
+    short: '1'
+    ordinal: 'st'
+  hour:
+    long: '06'
+    short: '6'
+    military: '06'
+    ampm: 'am'
+  minute:
+    long: '20'
+    short": '20'
+  seconds: '31'
+2:
+  url: 'http://veggieipsum.com'
+  title: 'Veggies sunt bona vobis, proinde vos postulo'
+  summary: |-
+    <p>Mung bean squash sorrel taro coriander collard greens gumbo bitterleaf tomato. Taro water chestnut celtuce turnip yarrow celery endive scallion black-eyed pea onion. Aubergine dulse turnip greens mustard salsify garlic soybean parsley bitterleaf desert raisin courgette.</p>
+  img:
+    thumbnail:
+      src: 'https://picsum.photos/140/105?image=11'
+      alt: 'Thumbnail 4:3'
+    hero:
+      src: 'https://picsum.photos/1600/800?image=11'
+      alt: 'Hero 2:1'
+  year:
+    long: '2013'
+    short: '13'
+  month:
+    long: 'February'
+    short: 'Feb'
+    digit: '02'
+  weekday:
+    long: 'Monday'
+    short: 'Mon'
+  day:
+    long: '10'
+    short: '10'
+    ordinal: 'th'
+  hour:
+    long: '01'
+    short: '1'
+    military: '13'
+    ampm: 'pm'
+  minute:
+    long: '20'
+    short: '20'
+  seconds": '31'
+3:
+  url: 'http://baconipsum.com/'
+  title: 'Bacon ipsum dolor sit amet turducken strip steak beef ribs shank'
+  summary: |-
+    <p>Boudin sausage jerky pastrami ground round salami biltong. Sausage fatback strip steak doner pork loin, pork belly drumstick ham short loin hamburger shankle. Short ribs sirloin rump tri-tip beef biltong. Meatball pig salami, jowl pork loin fatback short loin drumstick andouille.</p>
+  img:
+    thumbnail:
+      src: 'https://picsum.photos/140/105?image=12'
+      alt: 'Thumbnail 4:3'
+    hero:
+      src: 'https://picsum.photos/1600/800?image=12'
+      alt: 'Hero 2:1'
+  year:
+    long: '2013'
+    short: '13'
+  month:
+    long: 'March'
+    short: 'Mar'
+    digit: '03'
+  weekday:
+    long: 'Tuesday'
+    short: 'Tue'
+  day:
+    long: '22'
+    short: '22'
+    ordinal: 'nd'
+  hour:
+    long: '04'
+    short: '4'
+    military: '16'
+    ampm: 'pm'
+  minute:
+    long: '45'
+    short: '45'
+  seconds: '11'
+4:
+  url: 'http://hipsteripsum.me/'
+  title: 'Whatever swag accusamus occupy, gentrify butcher tote bag'
+  summary: |-
+    <p>Fanny pack ullamco et veniam semiotics. Shoreditch PBR reprehenderit cliche, magna Tonx aesthetic. Narwhal photo booth DIY aute post-ironic anim. Vice cliche brunch est before they sold out fap, street art Odd Future fashion axe messenger bag nihil Tonx tattooed. Nihil hashtag incididunt, do eu art party Banksy jean shorts four loko typewriter.</p>
+  img:
+    thumbnail:
+      src: 'https://picsum.photos/140/105?image=13'
+      alt: 'Thumbnail 4:3'
+    hero:
+      src: 'https://picsum.photos/1600/800?image=13'
+      alt: 'Hero 2:1'
+  year:
+    long: '2013'
+    short: '13'
+  month:
+    long: 'April'
+    short: 'Apr'
+    digit: '04'
+  weekday:
+    long: 'Wednesday'
+    short: 'Wed'
+  day:
+    long: '13'
+    short: '13'
+    ordinal: 'th'
+  hour:
+    long: '10'
+    short: '10'
+    military: '10'
+    ampm: 'am'
+  minute:
+    long: '14'
+    short: '14'
+  seconds: '52'

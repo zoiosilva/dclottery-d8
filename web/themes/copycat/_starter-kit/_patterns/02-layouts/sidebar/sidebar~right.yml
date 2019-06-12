@@ -1,0 +1,10 @@
+---
+modifier: 'l-sidebar--right'
+header: |-
+  <p style="background:#333;color:#fff;padding:1em; margin:0;">Header</p>
+aside: |-
+  <p style="background:#333;color:#fff;padding:1em; margin:0;">Sidebar</p>
+main: |-
+  <p style="background:#333;color:#fff;padding:1em; margin:0;">Main</p>
+footer: |-
+  <p style="background:#333;color:#fff;padding:1em; margin:0;">Footer</p>

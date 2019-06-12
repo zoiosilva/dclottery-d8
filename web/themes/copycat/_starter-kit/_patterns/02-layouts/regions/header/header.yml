@@ -1,0 +1,18 @@
+---
+content:
+  join():
+    - include():
+        pattern: components-site-name
+    - include():
+        pattern: components-menu
+        with:
+          menu_name: 'main'
+          items:
+            - title: 'Home'
+              url: '#'
+            - title: 'About'
+              url: '#'
+            - title: 'Contact'
+              url: '#'
+            - title: 'Search'
+              url: '#'

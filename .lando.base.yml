@@ -1,0 +1,25 @@
+recipe: pantheon
+config:
+  framework: drupal8
+  xdebug: true
+
+events:
+  pre-start:
+    - composer install
+  post-db-import:
+    - appserver: drush cc all -y
+
+services:
+  appserver:
+    run_as_root:
+      - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+      - apt-get install -y nodejs
+      - npm install -global gulp-cli
+
+tooling:
+  npm:
+    service: appserver
+    cmd: cd /app/web/themes/copycat && npm
+  gulp:
+    service: appserver
+    cmd: cd /app/web/themes/copycat && gulp

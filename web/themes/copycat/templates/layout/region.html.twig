@@ -1,0 +1,16 @@
+{#
+ /**
+  * @file
+  * Theme override to display a region.
+  */
+#}
+
+{% set classes = [
+  'l-' ~ region|clean_class,
+] %}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

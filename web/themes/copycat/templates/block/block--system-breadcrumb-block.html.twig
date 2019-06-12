@@ -1,0 +1,20 @@
+{% set classes = [
+  'block',
+  'block--provider-' ~ configuration.provider|clean_class,
+  'block--id-' ~ plugin_id|clean_class,
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% embed '@layouts/block/block.twig' with {
+  'wrapper': true,
+  'constrain': false,
+  'content_wrapper': true,
+  'title': false
+} %}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+
+{% endembed %}

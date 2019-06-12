@@ -1,0 +1,4 @@
+name: Copycat Helper
+description: Provides additional functionality for Copycat theme
+type: module
+core: '8.x'

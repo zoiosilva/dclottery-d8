@@ -1,0 +1,11 @@
+<img
+  {% spaceless %}
+    {% if custom_classes %}
+      class="{{ custom_classes }}"
+    {% endif %}
+    src="{{ img.thumbnail.src }}"
+    alt="{{ img.thumbnail.alt }}"
+    {{ img.thumbnail.height ? 'height="#{img.thumbnail.height}"'}}
+    {{ img.thumbnail.width ? 'width="#{img.thumbnail.width}"'}}
+  {% endspaceless %}
+/>

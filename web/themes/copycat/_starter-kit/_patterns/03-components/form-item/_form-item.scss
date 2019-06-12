@@ -1,0 +1,130 @@
+// @file
+// Styles for form items.
+
+// TODO: remove all unused variables
+
+// $form-label-color: $color-form-label;
+// $form-label-color-disabled: $color-form-label;
+// form-label-font-family
+// form-lablel-font-size
+// form-label-font-weight
+// form-label-margin-bottom
+// form-description-color
+// form-description-font-family
+// form-description-font-size
+// form-description-font-weight
+// form-description-margin-bottom
+// form-input-font-family
+// form-input-font-size
+// $form-input-radius: $border-radius-medium;
+// $form-input-shadow: $shadow-form-input;
+// $form-background-input: $color-background-input;
+// $form-background-input-disabled: $color-background-input-disabled;
+// $form-background-input-error: $color-background-input-error;
+// // form-input-radius
+// $form-input-border-color: $color-border;
+// $form-input-border-focus: $color-border;
+// $form-input-border-disabled: $color-border;
+
+// form-input-width-small
+// form-input-width-medium
+// form-input-width-large
+// form-input-height
+// form-input-height-textarea
+
+$form-border-color: #5b616b !default;
+$form-border-color-disabled: #aeb0b5 !default;
+$form-box-shadow-focus: 0 0 3px #3e94cf, 0 0 7px #3e94cf !default;
+$form-color: #fff;
+$form-color-disabled: #d6d7d9;
+$form-range-thumb-border-color: #f1f1f1 !default;
+$form-range-thumb-border-radius: rem(3px) !default;
+$form-range-thumb-border-width: 1px !default;
+$form-range-thumb-color: #757575 !default;
+$form-range-thumb-height: 44px !default;
+$form-range-thumb-width: 22px !default;
+$form-range-track-border-color: #757575 !default;
+$form-range-track-border-width: 1px !default;
+$form-range-track-color: #aeb0b5 !default;
+$form-range-track-height: 10px !default;
+$form-select-arrow-size: 13px !default;
+
+.form-item {
+  margin: 0 0 rem($spacing-scale-level-4);
+}
+
+.form-item__label {
+  //inlcude Form label style
+  //include form margin
+  color: $color-text-input-label;
+  display: block;
+
+  .is-disabled > & {
+    color: $color-text-input-disabled;
+  }
+}
+
+.form-item__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// .form-item__legend {}
+
+.form-item__description {
+  color: $color-text-input-label;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-item__required-marker::before {
+  color: $color-text-input-error;
+  content: '*';
+}
+
+.form-item__color,
+.form-item__date,
+.form-item__email,
+.form-item__month,
+.form-item__number,
+.form-item__password,
+.form-item__search,
+.form-item__select,
+.form-item__tel,
+.form-item__text,
+.form-item__textarea,
+.form-item__time,
+.form-item__url,
+.form-item__week {
+  @include display-body-text;
+  appearance: none;
+  background-color: $color-background-input;
+  border: 1px solid $color-border-input;
+  border-radius: $border-radius-small;
+  display: inline-block;
+  margin: 0 0 rem($spacing-scale-level-3);
+  max-width: 100%;
+  padding: rem($spacing-scale-level-1) rem($spacing-scale-level-3);
+
+  &:focus {
+    box-shadow: $box-shadow-elevation-1;
+    outline: 0;
+  }
+
+  &:disabled {
+    background: $color-background-input;
+    border-color: $color-border-input-disabled;
+    cursor: default;
+  }
+
+  .is-full-width > & {
+    width: 100%;
+  }
+}
+
+.form-item__textarea {
+  height: auto;
+}

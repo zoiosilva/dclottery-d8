@@ -1,0 +1,20 @@
+---
+body_class: 'not-front node-page node-page--node-type-page'
+main:
+  join():
+    - include():
+        pattern: templates-sidebar
+        with:
+          constrain: 'l-constrain'
+          main:
+            join():
+              - include():
+                  pattern: components-page-title
+                  with:
+                    page_title: 'Page Title'
+              - include():
+                  pattern: layouts-section
+                  with:
+                    constrain: false
+                    title: false
+                    content: "Page Content"

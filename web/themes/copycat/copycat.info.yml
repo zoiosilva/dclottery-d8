@@ -1,0 +1,69 @@
+name: Copycat
+type: theme
+description: 'Sass-based starter theme.'
+package: Core
+core: 8.x
+base theme: stable
+
+libraries:
+  - copycat/global
+
+libraries-override:
+  core/drupal.dropbutton:
+    js:
+      misc/dropbutton/dropbutton.js: js/overrides/dropbutton.js
+    css:
+      component:
+        /core/themes/stable/css/core/dropbutton/dropbutton.css: false
+  core/drupal.collapse:
+    js:
+      misc/collapse.js: js/overrides/collapse.js
+  core/modernizr:
+    js:
+      assets/vendor/modernizr/modernizr.min.js: js/lib/modernizr.min.js
+  system/base:
+    css:
+      component:
+        /core/themes/stable/css/system/components/align.module.css: false
+        /core/themes/stable/css/system/components/clearfix.module.css: false
+        /core/themes/stable/css/system/components/container-inline.module.css: false
+        /core/themes/stable/css/system/components/details.module.css: false
+        /core/themes/stable/css/system/components/fieldgroup.module.css: false
+        /core/themes/stable/css/system/components/hidden.module.css: false
+        /core/themes/stable/css/system/components/item-list.module.css: false
+        /core/themes/stable/css/system/components/nowrap.module.css: false
+        /core/themes/stable/css/system/components/position-container.module.css: false
+        /core/themes/stable/css/system/components/progress.module.css: false
+        /core/themes/stable/css/system/components/reset-appearance.module.css: false
+        /core/themes/stable/css/system/components/resize.module.css: false
+
+ckeditor_stylesheets:
+  - https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:300,400,600,700
+  - css/styles.css
+
+regions:
+  page_top: 'Page top'
+  header: Header
+  highlighted: Highlighted
+  content: Content
+  footer: Footer
+  modal: Modal
+  hidden: Hidden
+  page_bottom: 'Page bottom'
+
+component-libraries:
+  base:
+    paths:
+      - pattern-lab/source/_patterns/01-base
+  layouts:
+    paths:
+      - pattern-lab/source/_patterns/02-layouts
+  components:
+    paths:
+      - pattern-lab/source/_patterns/03-components
+  templates:
+    paths:
+      - pattern-lab/source/_patterns/04-templates
+  pages:
+    paths:
+      - pattern-lab/source/_patterns/05-pages

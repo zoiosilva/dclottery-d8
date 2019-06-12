@@ -1,0 +1,6 @@
+// @file
+// Styles for Block.
+
+.block {
+  @include responsive-margin($spacing-responsive-large, bottom);
+}
