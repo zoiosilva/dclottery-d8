@@ -52,7 +52,7 @@ web/sites/simpletest
 ######################
 *.log
 *.sql
-!db/components.sql.qz
+# !db/components.sql.qz
 
 # OS generated files #
 ######################
