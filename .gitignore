@@ -51,8 +51,6 @@ web/sites/simpletest
 # Logs and databases #
 ######################
 *.log
-*.sql
-# !db/components.sql.qz
 
 # OS generated files #
 ######################
