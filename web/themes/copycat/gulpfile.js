@@ -28,7 +28,7 @@ function pl(cb) {
 
 function watchFiles() {
   watch('./pattern-lab/source/*.scss', css),
-  watch(["./pattern-lab/source/**/*.twig", "./pattern-lab/source/**/*.json", "./pattern-lab/source/**/*.yaml", "./pattern-lab/source/**/*.yml"],pl);
+  watch(["./pattern-lab/source/**/*.twig", "./pattern-lab/source/**/*.json", "./pattern-lab/source/**/*.yaml", "./pattern-lab/source/**/*.yml"], pl);
 }
 
 const build = parallel(pl, css);

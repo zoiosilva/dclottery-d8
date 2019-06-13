@@ -1,6 +1,6 @@
 {
-    "name": "pantheon-systems/example-drops-8-composer",
-    "description": "Install drops-8 with Composer on Pantheon.",
+    "name": "taoti/drupal8",
+    "description": "Install Taoti Drupal 8 Composer on Pantheon.",
     "type": "project",
     "license": "MIT",
     "repositories": [
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.8",
+        "php": ">=7.1",
         "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.1",
@@ -43,7 +43,6 @@
         "drupal/twig_tweak": "^2.1",
         "drupal/video_embed_field": "^2.0",
         "drupal/view_modes_display": "^1.0",
-        "drush-ops/behat-drush-endpoint": "^8",
         "drush/drush": "~8",
         "pantheon-systems/quicksilver-pushback": "~1",
         "rvtraveller/qs-composer-installer": "^1.1",
@@ -71,15 +70,18 @@
         "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
         "post-install-cmd": [
             "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "@update-permissions"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "@update-permissions"
         ],
         "post-create-project-cmd": [
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
+        ],
+        "update-permissions": "chmod 777 vendor/drush/drush/drush.launcher"
     },
     "extra": {
         "installer-paths": {
@@ -89,6 +91,12 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "build-env": {
+            "install-cms": [
+                "drush site-install standard --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
+            ],
+            "export-configuration": "drush config-export --yes"
         },
         "patches": {
             "drupal/entity_browser": {
@@ -116,7 +124,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "7.0.8"
+            "php": "7.1.0"
         }
     }
 }

@@ -7,7 +7,7 @@ events:
   pre-start:
     - composer install
   post-db-import:
-    - appserver: drush cc all -y
+    - appserver: drush cr
 
 services:
   appserver:
