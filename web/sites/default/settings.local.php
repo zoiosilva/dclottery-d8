@@ -72,7 +72,7 @@ $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
  *
  */
 $settings['trusted_host_patterns'] = array(
-  '^components\.lndo\.site$',
+  '^drupal8\.lndo\.site$',
 );
 
 /**
