@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "393e9c8da4a9b7065afc36fe440af0e7",
+    "content-hash": "5cc5d94eae2ce9b6a05121adccb101c1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7473,10 +7473,10 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0.8"
+        "php": ">=7.1"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.0.8"
+        "php": "7.1.0"
     }
 }
