@@ -1,0 +1,19 @@
+<header class="l-header" role="banner">
+  <div class="l-constrain">
+    {% block content %}
+      {% include '@components/site-name/site-name.twig' with {
+        'url': '#',
+        'site_name': 'Copycat'
+      } %}
+      {% include '@components/menus/menu.twig' with {
+        'menu_name': 'main',
+        'items': [
+          { 'title': 'Home', 'url': '#' },
+          { 'title': 'About', 'url': '#' },
+          { 'title': 'Contact', 'url': '#' },
+          { 'title': 'Search', 'url': '#' },
+        ]
+      } %}
+    {% endblock %}
+  </div>
+</header>

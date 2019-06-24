@@ -12,8 +12,8 @@
 #}
 
 {% if items %}
-  {% include '@components/pager/pager.twig' with {
-    'modifier': '',
+  {% include '@components/pagers/pager.twig' with {
+    'modifier_classes': '',
     'heading': 'Pagination'|t,
     'items': items,
     'current': current

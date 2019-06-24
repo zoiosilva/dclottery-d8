@@ -1,0 +1,157 @@
+// @file
+// Typogrpahy extends
+
+%header-base {
+  display: block;
+  hyphens: none;
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+
+  @media print {
+    orphans: 3;
+    page-break-after: avoid;
+    widows: 3;
+
+    &::after {
+      display: inline-block;
+    }
+  }
+}
+
+%link-base {
+  @media print {
+    &,
+    &:visited {
+      text-decoration: none;
+    }
+
+    &[href]::after {
+      content: '<' attr(href) '>';
+      font-family: $font-family-primary;
+      font-size: 10pt;
+      font-weight: normal;
+      line-height: 1.2;
+      text-transform: lowercase;
+    }
+
+    // Uncomment and replace example.com with your site’s domain.
+    //&[href^='/']::after {
+    //  content: ' <http://example.com' attr(href) '>';
+    //}
+
+    &[href^='javascript:']::after,
+    &[href^='mailto:']::after,
+    &[href^='tel:']::after,
+    &[href^='#']::after,
+    &[href*='?']::after {
+      content: '';
+    }
+  }
+}
+
+%button-base {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0;
+  padding: rem($spacing-scale-level-2) rem($spacing-scale-level-4);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+%text-base {
+  margin-top: 0;
+}
+
+// Header Extends
+%heading-1 {
+  @extend %header-base;
+  @include display-headline1;
+  margin-bottom: $spacing-scale-heading-1;
+}
+
+%heading-2 {
+  @extend %header-base;
+  @include display-headline2;
+  margin-bottom: $spacing-scale-heading-2;
+}
+
+%heading-3 {
+  @extend %header-base;
+  @include display-headline3;
+  margin-bottom: $spacing-scale-heading-3;
+}
+
+%heading-4 {
+  @extend %header-base;
+  @include display-headline4;
+  margin-bottom: $spacing-scale-heading-4;
+}
+
+%heading-5 {
+  @extend %header-base;
+  @include display-headline5;
+  margin-bottom: $spacing-scale-heading-5;
+}
+
+%heading-6 {
+  @extend %header-base;
+  @include display-headline6;
+  margin-bottom: $spacing-scale-heading-6;
+}
+
+// Body Copy Extends
+%body-font {
+  @extend %text-base;
+  @include display-body-text;
+  margin-bottom: $spacing-scale-medium;
+}
+
+%body-font-small {
+  @extend %text-base;
+  @include display-body-text-small;
+  margin-bottom: $spacing-scale-x-small;
+}
+
+%body-font-large {
+  @extend %text-base;
+  @include display-body-text-large;
+  margin-bottom: $spacing-scale-large;
+}
+
+// Button Copy Extends
+%button-font {
+  @extend %button-base;
+  @include display-button-text;
+}
+
+%button-font-small {
+  @extend %button-base;
+  @include display-button-text-small;
+  margin: $spacing-scale-medium;
+}
+
+%button-font-large {
+  @extend %button-base;
+  @include display-headline3;
+  margin: $spacing-scale-large;
+}
+
+// Contextual Extends
+%body-font-large + %heading-1,
+%body-font + %heading-1,
+%body-font-small + %heading-1 {
+  padding-top: $spacing-scale-x-large;
+}
+
+%body-font-large + %heading-2,
+%body-font + %heading-2,
+%body-font-small + %heading-2,
+%body-font-large + %heading-3,
+%body-font + %heading-3,
+%body-font-small + %heading-3 {
+  padding-top: $spacing-scale-medium;
+}

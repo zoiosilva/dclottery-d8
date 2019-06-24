@@ -29,10 +29,12 @@
     required ? 'is-required',
     required ? 'js-form-required',
   ] %}
+
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
   <legend{{ legend.attributes.addClass('fieldset__legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
   </legend>
+
   <div class="fieldset__content">
     {% if errors %}
       <div class="fieldset__error-message">{{ errors }}</div>

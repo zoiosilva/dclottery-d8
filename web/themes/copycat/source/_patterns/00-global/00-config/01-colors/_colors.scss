@@ -1,0 +1,201 @@
+// @file
+// Color variables
+
+//*******************************************
+// COLOR PALETTES
+//*******************************************
+
+// Primary Palette
+$blue: #0071bc;
+$blue-light: #177dc2;
+$blue-light-1: #2E8AC8;
+$blue-light-2: #4597CE;
+$blue-dark: #0067AB;
+$blue-dark-1: #005D9A;
+$blue-dark-2: #005389;
+
+// Secondary Palette
+$red: #e31c3d;
+$red-light: #E5304E;
+$red-light-1: #E84560;
+$red-light-2: #EA5971;
+$red-dark: #CF1A38;
+$red-dark-1: #BA1732;
+$red-dark-2: #A6152D;
+
+// Tertiary Palette
+$ocean-blue: #02bfe7;
+$ocean-blue-light: #19C4E9;
+$ocean-blue-light-1: #30CAEB;
+$ocean-blue-light-2: #47D0ED;
+$ocean-blue-dark: #02AED2;
+$ocean-blue-dark-1: #029DBE;
+$ocean-blue-dark-2: #028BA9;
+
+// Grayscale
+$white: #fff;
+$grayscale-1: #f1f1f1;
+$grayscale-2: #d6d7d9;
+$grayscale-3: #aeb0b5;
+$grayscale-4: #5b616b;
+$grayscale-5: #323a45;
+$black: #212121;
+
+//*******************************************
+// GRADIENTS
+//*******************************************
+
+
+//*******************************************
+// TEXT
+//*******************************************
+
+// Body Text
+$color-text-primary: $black;
+$color-text-secondary: $grayscale-4;
+$color-text-accent: $blue-light;
+$color-text-on-light: $black;
+$color-text-on-dark: $grayscale-1;
+
+// Link Text
+$color-text-link: $blue;
+$color-text-link-hover: $blue-dark;
+$color-text-link-active: $blue-dark;
+$color-text-link-visited: $blue-dark;
+
+// Selection Text
+$color-text-selection: $white;
+
+// Primary Button Text
+$color-text-button-primary: $white;
+$color-text-button-primary-hover: $white;
+$color-text-button-primary-focus: $white;
+$color-text-button-primary-active: $white;
+$color-text-button-primary-disabled: $grayscale-3;
+
+// Secondary Button Text
+$color-text-button-secondary: $white;
+$color-text-button-secondary-hover: $white;
+$color-text-button-secondary-focus: $white;
+$color-text-button-secondary-active: $white;
+$color-text-button-secondary-disabled: $grayscale-3;
+
+// Tertiary Button Text
+$color-text-button-tertiary: $white;
+$color-text-button-tertiary-hover: $ocean-blue-light;
+$color-text-button-tertiary-focus: $ocean-blue-light;
+$color-text-button-tertiary-active: $ocean-blue;
+$color-text-button-tertiary-disabled: $grayscale-3;
+
+// Tabs Button Text
+$color-text-tabs-primary: $white;
+$color-text-tabs-primary-hover: $white;
+$color-text-tabs-primary-focus: $white;
+$color-text-tabs-primary-active: $white;
+$color-text-tabs-primary-disabled: $grayscale-3;
+
+// Inputs Text
+$color-text-input-label: $blue;
+$color-text-input-disabled: $grayscale-4;
+$color-text-input-error: $red;
+
+//*******************************************
+// BACKGROUNDS
+//*******************************************
+
+// Base Backgrounds
+$background-color-primary: $white;
+$background-color-secondary: $blue;
+$background-color-tertiary: $blue-dark;
+$background-color-quaternary: $blue-dark-1;
+$background-color-quinary: $grayscale-1;
+$background-color-light: $white;
+$background-color-dark: $black;
+
+// Primary Button Background Section
+$background-color-button-primary: $blue;
+$background-color-button-primary-hover: $blue-dark-1;
+$background-color-button-primary-active: $blue-dark;
+$background-color-button-primary-focus: $blue-dark;
+$background-color-button-primary-disabled: $grayscale-1;
+
+// Secondary Button Background Section
+$background-color-button-secondary: $grayscale-4;
+$background-color-button-secondary-hover: $grayscale-5;
+$background-color-button-secondary-active: $grayscale-5;
+$background-color-button-secondary-focus: $grayscale-5;
+$background-color-button-secondary-disabled: $grayscale-1;
+
+// Tertiary Button Background Section
+$background-color-button-tertiary: transparent;
+$background-color-button-tertiary-hover: $background-color-button-tertiary;
+$background-color-button-tertiary-active: $background-color-button-tertiary;
+$background-color-button-tertiary-focus: $background-color-button-tertiary;
+$background-color-button-tertiary-disabled: $grayscale-1;
+
+// Tabs Button Background Section
+$background-color-tabs-primary: $grayscale-3;
+$background-color-tabs-primary-hover: $grayscale-4;
+$background-color-tabs-primary-active: $grayscale-4;
+$background-color-tabs-primary-focus: $grayscale-4;
+$background-color-tabs-primary-disabled: $grayscale-1;
+
+// Selection Background
+$background-color-selection: $blue-dark;
+
+// Inputs Background
+$background-color-input: $grayscale-1;
+$background-color-input-focus: $white;
+$background-color-input-disabled: $grayscale-1;
+$background-color-input-error: $grayscale-1;
+$background-color-input-hover: $white;
+
+// Table Header Background
+$background-color-table-header: $grayscale-1;
+$background-color-table-cell: $white;
+
+//*******************************************
+// BORDERS
+//*******************************************
+
+// General UI Border
+$border-color-ui: $grayscale-3;
+$border-color-primary: $grayscale-4;
+$border-color-secondary: $grayscale-2;
+
+// Primary Button Border
+$border-color-button-primary: $blue;
+$border-color-button-primary-hover: $blue-dark;
+$border-color-button-primary-focus: $blue-dark;
+$border-color-button-primary-active: $blue-dark-1;
+$border-color-button-primary-disabled: $grayscale-1;
+
+// Secondary Button Border
+$border-color-button-secondary: $blue;
+$border-color-button-secondary-hover: $blue-dark;
+$border-color-button-secondary-focus: $blue-dark;
+$border-color-button-secondary-active: $blue-dark-1;
+$border-color-button-secondary-disabled: $grayscale-1;
+
+// Tertiary Button Border
+$border-color-button-tertiary: $white;
+$border-color-button-tertiary-hover: $ocean-blue-light;
+$border-color-button-tertiary-focus: $ocean-blue-light;
+$border-color-button-tertiary-active: $ocean-blue;
+$border-color-button-tertiary-disabled: $grayscale-1;
+
+// Tabs Button Border
+$border-color-tabs-primary: $white;
+$border-color-tabs-primary-hover: $ocean-blue-light;
+$border-color-tabs-primary-focus: $ocean-blue-light;
+$border-color-tabs-primary-active: $ocean-blue;
+$border-color-tabs-primary-disabled: $grayscale-1;
+
+// Inputs Border
+$border-color-input: $grayscale-4;
+$border-color-input-disabled: $grayscale-4;
+
+//*******************************************
+// SHADOWS
+//*******************************************
+$box-shadow-color: $black;

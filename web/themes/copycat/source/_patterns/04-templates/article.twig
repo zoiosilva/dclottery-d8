@@ -1,0 +1,32 @@
+{% set additional_attributes = {
+  'class': ['article']
+} %}
+
+<article {{ add_attributes(additional_attributes) }}>
+  <div class="l-constrain">
+    {% include '@components/page-title/page-title.twig' with {
+      'page_title': article_title
+    } %}
+
+    {% if article_footer %}
+      {% embed '@layouts/section/section.twig' with {
+        'constrain': ''
+      } %}
+        {% block content %}
+          {% include '@components/date/date.twig' with {
+            'content': article_date
+          } %}
+          {% include '@components/author/author.twig' with {
+            'url': '#',
+            'author': article_author
+          } %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+
+    {% include '@layouts/section/section.twig' with {
+      'constrain': '',
+      'content': article_content
+    } %}
+  </div>
+</article>

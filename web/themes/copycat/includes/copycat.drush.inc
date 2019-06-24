@@ -114,7 +114,7 @@ function drush_copycat($name = NULL) {
   // Copy the Copycat theme directory recursively to the new theme’s location.
   drush_op('drush_copy_dir', $copycat_path, $new_path);
 
-  // Remove Copycat’s drush file from the new theme.
+  // Remove Copycats’s drush file from the new theme.
   drush_op('unlink', "$new_path/includes/copycat.drush.inc");
 
   // Rename the .info.yml file.

@@ -1,0 +1,130 @@
+---
+colors:
+-
+  base_color:
+    -
+      hex: '#0071bc'
+      variable_name: $blue
+      light_text: true
+  light_variant:
+    -
+      hex: '#177dc2'
+      variable_name: $blue-light
+      light_text: true
+    -
+      hex: '#2E8AC8'
+      variable_name: $blue-light-1
+      light_text: true
+    -
+      hex: '#4597CE'
+      variable_name: $blue-light-2
+      light_text: true
+  dark_variant:
+    -
+      hex: '#0067AB'
+      variable_name: $blue-dark
+      light_text: true
+    -
+      hex: '#005D9A'
+      variable_name: $blue-dark-1
+      light_text: true
+    -
+      hex: '#005389'
+      variable_name: $blue-dark-2
+      light_text: true
+-
+  base_color:
+    -
+      hex: '#e31c3d'
+      variable_name: $red
+      light_text: true
+  light_variant:
+    -
+      hex: '#E5304E'
+      variable_name: $red-light
+      light_text: true
+    -
+      hex: '#E84560'
+      variable_name: $red-light-1
+      light_text: true
+    -
+      hex: '#EA5971'
+      variable_name: $red-light-2
+      light_text: true
+  dark_variant:
+    -
+      hex: '#CF1A38'
+      variable_name: $red-dark
+      light_text: true
+    -
+      hex: '#BA1732'
+      variable_name: $red-dark-1
+      light_text: true
+    -
+      hex: '#A6152D'
+      variable_name: $red-dark-2
+      light_text: true
+-
+  base_color:
+    -
+      hex: '#02bfe7'
+      variable_name: $ocean-blue
+      light_text: true
+  light_variant:
+    -
+      hex: '#19C4E9'
+      variable_name: $ocean-blue-light
+      light_text: true
+    -
+      hex: '#30CAEB'
+      variable_name: $ocean-blue-light-1
+      light_text: true
+    -
+      hex: '#47D0ED'
+      variable_name: $ocean-blue-light-2
+      light_text: true
+  dark_variant:
+    -
+      hex: '#02AED2'
+      variable_name: $ocean-blue-dark
+      light_text: true
+    -
+      hex: '#029DBE'
+      variable_name: $ocean-blue-dark-1
+      light_text: true
+    -
+      hex: '#028BA9'
+      variable_name: $ocean-blue-dark-2
+      light_text: true
+-
+  base_color:
+    -
+      hex: '#212121'
+      variable_name: $black
+      light_text: true
+  light_variant:
+    -
+      hex: '#FFFFFF'
+      variable_name: $white
+      light_text: false
+    -
+      hex: '#f1f1f1'
+      variable_name: $grayscale-1
+      light_text: false
+    -
+      hex: '#d6d7d9'
+      variable_name: $grayscale-2
+      light_text: false
+  dark_variant:
+    -
+      hex: '#aeb0b5'
+      variable_name: $grayscale-3
+      light_text: false
+    -
+      hex: '#5b616b'
+      variable_name: $grayscale-4
+      light_text: false
+    -
+      hex: '#323a45'
+      variable_name: $grayscale-5
+      light_text: false

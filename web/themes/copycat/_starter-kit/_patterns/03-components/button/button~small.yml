@@ -1,6 +1,0 @@
----
-modifier: 'button--small'
-button: false
-disabled: false
-url: '#'
-text: Button Text

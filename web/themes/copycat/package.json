@@ -1,6 +1,6 @@
 {
   "name": "copycat",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A Drupal theme.",
   "bugs": "https://github.com/taoti/copycat/issues",
   "repository": {
@@ -10,18 +10,24 @@
   "license": "GPL-2.0+",
   "private": true,
   "themePath": ".",
-  "main": "gulp",
+  "main": "gulpfile.js",
+  "browserslist": "> 1%, last 3 versions",
   "devDependencies": {
+    "@pattern-lab/cli": "^0.0.3-alpha.0",
+    "@pattern-lab/core": "^3.0.1-alpha.0",
+    "@pattern-lab/engine-twig-php": "^3.0.0",
+    "@pattern-lab/uikit-workshop": "^1.0.1-alpha.0",
+    "autoprefixer": "^9.6.0",
+    "breakpoint-sass": "^2.7.1",
+    "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-livereload": "^4.0.1",
-    "gulp-sass-glob": "^1.0.9"
+    "postcss-assets": "^5.0.0"
   },
   "scripts": {
-    "postinstall": "gulp setup",
-    "component": "node component.js",
-    "start": "gulp watch"
+    "component": "node component.js"
   }
 }

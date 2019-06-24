@@ -1,0 +1,9 @@
+---
+modifier: ''
+url: '#'
+title: 'Card title'
+content: |-
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
+footer: ''
+media: |-
+  <img src="http://fpoimg.com/800x600?text=Card Image">

@@ -1,0 +1,26 @@
+// Single points on spacing scale
+// Based on 8pt grid
+$spacing-scale-level-1: 4px;
+$spacing-scale-level-2: 8px;
+$spacing-scale-level-3: 16px;
+$spacing-scale-level-4: 24px;
+$spacing-scale-level-5: 32px;
+$spacing-scale-level-6: 40px;
+$spacing-scale-level-7: 48px;
+$spacing-scale-level-8: 56px;
+$spacing-scale-level-9: 64px;
+$spacing-scale-level-10: 72px;
+$spacing-scale-level-11: 80px;
+
+// Spacing-used
+$spacing-scale-x-small: $spacing-scale-level-1;
+$spacing-scale-small: $spacing-scale-level-2;
+$spacing-scale-medium: $spacing-scale-level-3;
+$spacing-scale-large: $spacing-scale-level-5;
+$spacing-scale-x-large: $spacing-scale-level-6;
+$spacing-scale-heading-1: $spacing-scale-level-5;
+$spacing-scale-heading-2: $spacing-scale-level-4;
+$spacing-scale-heading-3: $spacing-scale-level-3;
+$spacing-scale-heading-4: $spacing-scale-level-3;
+$spacing-scale-heading-5: $spacing-scale-level-3;
+$spacing-scale-heading-6: $spacing-scale-level-3;

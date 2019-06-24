@@ -31,7 +31,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% embed '@layouts/block/block.twig' with {
-  'constrain': false,
+  'constrain': '',
   'title_prefix': title_prefix,
   'title_suffix': title_suffix,
   'title': label is not empty ? label : false

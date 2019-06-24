@@ -52,16 +52,20 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% set main %}
-  {% include '@components/page-title/page-title.twig' with {
-    'page_title': label|field_value
-  } %}
-  {{ content }}
-{% endset %}
-
-{% include '@templates/sidebar.twig' with {
-  'header': false,
-  'aside': false,
-  'main': main,
-  'footer': false
+{% embed '@templates/article.twig' with {
+  'article_title': label|field_value,
+  'article_footer': display_submitted ? true : false,
+  'article_content': content
 } %}
+
+  {% if display_submitted %}
+    {% block content %}
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    {% endblock %}
+  {% endif %}
+
+{% endembed %}

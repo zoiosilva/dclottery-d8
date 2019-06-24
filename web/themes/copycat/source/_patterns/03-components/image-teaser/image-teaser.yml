@@ -1,0 +1,9 @@
+---
+modifier: ''
+url: '#'
+image: |-
+ <img src="https://picsum.photos/125/125?image=11" width="125">
+title: 'Title'
+date: 'November 24, 2019'
+summary: |-
+  <p>This is the summary, which can contain <abbr title="Hyper Text Markup Language">HTML</abbr> markup. It should be 600 characters or less.</p>
