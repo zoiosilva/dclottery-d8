@@ -76,7 +76,7 @@ With our Drupal 8 instance now configured we need to import the database.  Locat
 
 ```
   cd db
-  lando db-import components.sql.gz
+  lando db-import drupal8.sql.gz
 ```
 
 Our database is now imported and all that is left to do is to configure our theme and scaffold up our Pattern Lab instance and compile the Sass files need for our theme.  We can easily do that by entering the following command within the terminal window..
@@ -85,7 +85,7 @@ Our database is now imported and all that is left to do is to configure our them
   cd ..
   cd web/themes/copycat
   lando npm install
-  lando gulp watch
+  lando gulp
 ```
 
 Now that our theme is no installed and configured we can preview our Drupal 8 website by either selecting the URL within the terminal window or by opening a browser and navigating to http://components.lndo.site/user and logging in with the following credentials:
