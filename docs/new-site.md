@@ -1,4 +1,5 @@
 # CREATE A NEW TAOTI DRUPAL 8 COMPOSER BASED SITE
+Note that creating a new site has more [requirements](requirements-new-site.md) than developing an existing site.
 
 ## Initialize Local Site Repository
 - Clone the [base repository](https://github.com/Taoti/drupal8) to your computer to a new folder. Use the clone command
@@ -55,7 +56,7 @@ git push --set-upstream origin master
 
 ### Transition github repository created on your user to Taoti
 When you use this method, the Github repository that gets set up will be owned by your Github user. We need to transfer
-it to Taoti to allow other developers to work on it. Read the Github documentation on [transfering a repository](
+it to Taoti to allow other developers to work on it. Read the Github documentation on [transferring a repository](
 https://help.github.com/en/articles/transferring-a-repository)
 
 > TLDR: Go to the new Github repo > settings > (scroll to bottom) Transfer Repository
