@@ -4,8 +4,8 @@ config:
   xdebug: true
 
 events:
-  pre-start:
-    - composer install
+  post-start:
+    - appserver: composer install
   post-db-import:
     - appserver: drush cr
 
