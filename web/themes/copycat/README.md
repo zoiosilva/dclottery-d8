@@ -22,7 +22,8 @@ Copycat.
 - [npm](https://www.npmjs.com/get-npm)
 - [gulp](https://gulpjs.com/docs/en/getting-started/quick-start)
 
-In addition, in order to compile Twig files, Pattern Lab requires that PHP be available on the command line.
+In addition, in order to compile Twig files, Pattern Lab requires that PHP be
+available on the command line.
 
 ## Installation
 
@@ -83,13 +84,15 @@ the following NPM command in the theme folder.
 npm install
 ```
 
-To initiate the Gulp build tasks that compile the Sass and Pattern Lab files and watch for changes, run the following command in the theme directory:
+To initiate the Gulp build tasks that compile the Sass and Pattern Lab files
+and watch for changes, run the following command in the theme directory:
 
 ```
 gulp
 ```
 
-To initiate the Gulp build tasks only (without watching for changes), run the following command in the theme directory:
+To initiate the Gulp build tasks only (without watching for changes), run the
+following command in the theme directory:
 
 ```
 gulp copycatBuild

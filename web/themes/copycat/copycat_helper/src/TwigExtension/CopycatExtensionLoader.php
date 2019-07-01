@@ -3,23 +3,37 @@
 namespace Drupal\copycat_helper\TwigExtension;
 
 /**
- * Load custom twig functions from Pattern Lab
+ * Load custom twig functions from Pattern Lab.
  */
 class CopycatExtensionLoader {
 
-  static $objects = [];
+  /**
+   * The array of twig functions.
+   *
+   * @var array
+   */
+  protected static $objects = [];
 
-  static public function init() {
+  /**
+   * Initialize objects array if needed.
+   */
+  public static function init() {
     if (!self::$objects) {
       static::loadAll();
     }
   }
 
-  static public function get() {
+  /**
+   * Getter for objects array.
+   */
+  public static function get() {
     return !empty(self::$objects) ? self::$objects : [];
   }
 
-  static protected function loadAll() {
+  /**
+   * Populate the objects array.
+   */
+  protected static function loadAll() {
     $theme = \Drupal::config('system.theme')->get('default');
     $themeLocation = drupal_get_path('theme', $theme);
     $themePath = DRUPAL_ROOT . '/' . $themeLocation . '/';
@@ -27,7 +41,10 @@ class CopycatExtensionLoader {
     static::load($fullPath . 'add_attributes.function.drupal.php');
   }
 
-  static protected function load($file) {
+  /**
+   * Load pattern lab file and add function to object list.
+   */
+  protected static function load($file) {
     include $file;
     self::$objects[] = $function;
   }

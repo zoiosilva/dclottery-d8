@@ -108,7 +108,7 @@ function drush_copycat($name = NULL) {
 
   // Get theme paths.
   $copycat_path = drush_normalize_path(drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . drupal_get_path('theme', 'copycat'));
-  $theme_path = substr($copycat_path, 0, strrpos( $copycat_path, '/'));
+  $theme_path = substr($copycat_path, 0, strrpos($copycat_path, '/'));
   $new_path = drush_normalize_path($theme_path . '/' . $machine_name);
 
   // Copy the Copycat theme directory recursively to the new theme’s location.
@@ -145,7 +145,7 @@ function drush_copycat($name = NULL) {
   $new_theme_file = drush_normalize_path($new_path . '/' . $machine_name . '.theme');
   drush_op('rename', $copycat_theme_file, $new_theme_file);
 
-  // Replace all occurrences of 'copycat' with the machine name of the new theme.
+  // Replace all occurrences of 'copycat' with the new theme's machine name.
   $breakpoints_file = $machine_name . '.breakpoints.yml';
   $libraries_file = $machine_name . '.libraries.yml';
   $theme_file = $machine_name . '.theme';
