@@ -41,9 +41,7 @@ th {
 
 thead {
   @media print {
-    & {
-      display: table-header-group;
-    }
+    display: table-header-group;
   }
 
   td,
@@ -54,8 +52,6 @@ thead {
 
 tr {
   @media print {
-    & {
-      page-break-inside: avoid;
-    }
+    page-break-inside: avoid;
   }
 }

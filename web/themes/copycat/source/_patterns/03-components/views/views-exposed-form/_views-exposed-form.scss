@@ -23,8 +23,8 @@ form[id^="views-exposed-form-"] {
 
   .form-item__text {
     height: 33px;
-    padding: 0.5em 0.4375em;
     margin: 0;
+    padding: 0.5em 0.4375em;
     width: 100%;
 
     &:focus {
@@ -60,7 +60,7 @@ form[id^="views-exposed-form-"] {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 3px;
     border-left: 1px none $white;
-    border-top: none;
+    border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 3px;
     cursor: pointer;

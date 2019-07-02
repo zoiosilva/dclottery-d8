@@ -36,9 +36,7 @@ $dropbutton-toggle-icon-size: rem(12px) !default;
     }
   }
 
-  & + &,
-  & + .button,
-  .button + & {
+  & + &, .button + & {
     margin-left: 0.5em; // LTR
 
     @if $support-for-rtl {
@@ -60,8 +58,8 @@ $dropbutton-toggle-icon-size: rem(12px) !default;
   bottom: 0;
   margin: 0;
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
   width: $dropbutton-toggle-width;
 }
 

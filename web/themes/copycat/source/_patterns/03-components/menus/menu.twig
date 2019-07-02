@@ -41,6 +41,9 @@
       {% if item['original_link'].options.attributes.class %}
         {% set link_classes = link_classes|merge([item['original_link'].options.attributes.class]) %}
       {% endif %}
+      {% if item.original_class %}
+        {% set link_classes = link_classes|merge([item.original_class]) %}
+      {% endif %}
 
       {% set additional_item_attributes = {
         'class': item_classes

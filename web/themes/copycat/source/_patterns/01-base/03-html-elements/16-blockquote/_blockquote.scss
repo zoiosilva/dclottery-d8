@@ -14,15 +14,13 @@ blockquote {
     display: block;
     padding-top: rem($spacing-scale-level-2);
 
-    &:before {
+    &::before {
       content: "\2013";
       margin-right: 0.5em;
     }
   }
 
   @media print {
-    & {
-      page-break-inside: avoid;
-    }
+    page-break-inside: avoid;
   }
 }

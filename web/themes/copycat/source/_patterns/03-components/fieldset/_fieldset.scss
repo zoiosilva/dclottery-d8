@@ -5,7 +5,7 @@ $base-line-height: 1.5;
 $vertical-spacing-forms: 2;
 $fieldset-color-border: #aeb0b5 !default;
 $fieldset-color-legend: #d6d7d9 !default;
-$fieldset-legend-offset:  rem($base-line-height * $font-size-base) !default;
+$fieldset-legend-offset: rem($base-line-height * $font-size-base) !default;
 
 .fieldset {
   margin-bottom: rem($vertical-spacing-forms + ($base-line-height * $font-size-base));
@@ -59,7 +59,7 @@ $fieldset-legend-offset:  rem($base-line-height * $font-size-base) !default;
   .fieldset__legend {
     background: $fieldset-color-legend;
     border: 1px solid $fieldset-color-border;
-    border-bottom: none;
+    border-bottom: 0;
     color: #212121;
     height: 2em;
     line-height: 2;

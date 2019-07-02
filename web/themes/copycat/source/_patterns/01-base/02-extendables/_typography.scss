@@ -52,14 +52,14 @@
 %button-base {
   cursor: pointer;
   display: inline-block;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   margin-top: 0;
   padding: rem($spacing-scale-level-2) rem($spacing-scale-level-4);
   text-align: center;
   text-decoration: none;
   vertical-align: top;
   white-space: normal;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }
 
 %text-base {
