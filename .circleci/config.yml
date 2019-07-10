@@ -1,7 +1,7 @@
 # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
-    - image: quay.io/nickwilde1990/nick-docker:master
+    - image: quay.io/taoticreative/build-tools-ci-docker:master
   working_directory: ~/example_drops_8_composer
   environment:
     #=========================================================================
@@ -42,7 +42,7 @@ jobs:
         <<: *defaults
 
         docker:
-            - image: quay.io/nickwilde1990/nick-docker:master
+            - image: quay.io/taoticreative/build-tools-ci-docker:master
 
         steps:
             - checkout
@@ -152,7 +152,7 @@ jobs:
     composer_lock_updater:
         <<: *defaults
         docker:
-            - image: quay.io/nickwilde1990/nick-docker:master
+            - image: quay.io/taoticreative/build-tools-ci-docker:master
         steps:
             - checkout
 
