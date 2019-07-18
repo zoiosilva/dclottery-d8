@@ -20,7 +20,7 @@ git remote remove origin
 Please note that "!" (exclamation points) don't work in the `--admin-password field`. `[NEW-SITE-MACHINE-NAME]` must be 
 lower case, hyphenated and cannot contain symbols.
 ```bash
-terminus build:project:create --team="Taoti Creative" --admin-email="taotiadmin@taoti.com" --admin-password="[REDACTED]" --ci=circleci --git=github ./ [NEW-SITE-MACHINE-NAME] --preserve-local-repository
+terminus build:project:create --pantheon-site="District 9" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ district-9-d8 --preserve-local-repository
 ```
 
 > Note: if you get a drush permissions error while that is attempting to run, you likely need [drush permissions patch](
@@ -54,9 +54,4 @@ lando push --files=none --code=none --database=dev
 git push --set-upstream origin master
 ```
 
-### Transition github repository created on your user to Taoti
-When you use this method, the Github repository that gets set up will be owned by your Github user. We need to transfer
-it to Taoti to allow other developers to work on it. Read the Github documentation on [transferring a repository](
-https://help.github.com/en/articles/transferring-a-repository)
-
-> TLDR: Go to the new Github repo > settings > (scroll to bottom) Transfer Repository
+- Ping a github administrator (Director, DevOps Lead) to make the repository private.
