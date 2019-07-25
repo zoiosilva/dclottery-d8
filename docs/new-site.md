@@ -20,7 +20,7 @@ git remote remove origin
 Please note that "!" (exclamation points) don't work in the `--admin-password field`. `[NEW-SITE-MACHINE-NAME]` must be 
 lower case, hyphenated and cannot contain symbols.
 ```bash
-terminus build:project:create --pantheon-site="District 9" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ district-9-d8 --preserve-local-repository
+terminus build:project:create --pantheon-site="District 9" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ NEW-SITE-MACHINE-NAME --preserve-local-repository
 ```
 
 > Note: if you get a drush permissions error while that is attempting to run, you likely need [drush permissions patch](
@@ -54,4 +54,7 @@ lando push --files=none --code=none --database=dev
 git push --set-upstream origin master
 ```
 
-- Ping a github administrator (Director, DevOps Lead) to make the repository private.
+- Make the repository private:
+    - go to your new repository (which will have an url like `https://github.com/Taoti/NEW-SITE-MACHINE-NAME`).
+    - Click the `settings` tab near the top.
+    - Scroll alllll the way down, and click `Make Private` in the Danger Zone and follow prompts.
