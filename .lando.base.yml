@@ -1,7 +1,7 @@
 recipe: pantheon
 config:
   framework: drupal8
-  xdebug: true
+  xdebug: false
 
 events:
   post-start:
@@ -23,3 +23,13 @@ tooling:
   gulp:
     service: appserver
     cmd: cd /app/web/themes/copycat && gulp
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
