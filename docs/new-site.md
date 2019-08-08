@@ -32,6 +32,8 @@ curl https://github.com/NickWilde1990/terminus-build-tools-plugin/commit/1ed3bfc
 git apply permissions.patch
 ```
 
+*You will need to contact a Taoti organization repository administrator to 'turn on' CircleCI in it's dashboard. As of today those people are Mark and Chaz.*
+
 ## Post Creation steps
 
 - Edit `.lando.yml` and change the site name to your new site name, and update config values to match your new site's
