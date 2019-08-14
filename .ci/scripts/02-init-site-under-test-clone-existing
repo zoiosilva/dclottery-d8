@@ -9,9 +9,16 @@ set -eo pipefail
 # Use EITHER this script OR the re-install-new script; do not run both.
 #
 
-# Create a new multidev site to test on
+# Wake up the DEV environment
 terminus -n env:wake "$TERMINUS_SITE.dev"
-terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content
+
+# Create a new multidev site to test on if we haven't pushed to master
+if [[ $TERMINUS_ENV != "dev" ]];
+then
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content
+else
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes
+fi
 
 # Run updatedb to ensure that the cloned database is updated for the new code.
 terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
