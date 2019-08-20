@@ -6,8 +6,8 @@
   - `$ ls -1a ./path/to/old-repo/../modules/contrib > old-mods.txt`
 - Evaluate the differences between them
   - `$ diff composer-mods.txt old-mods.txt`
- - Remove the modules from the `composer.json` file for the ones that don't exist in the source repository
- - Add the modules that do exist in the source repository utilizing `composer require drupal/[module_name]`
-   - You can nest several `drupal/[module_name]` in the same `composer require` statement
- 
+  - Remove the modules from the `composer.json` file for the ones that don't exist in the source repository
+- Add the modules that do exist in the source repository utilizing `composer require drupal/[module_name]`
+  - You can nest several `drupal/[module_name]` in the same `composer require` statement
+- Begin following normal 'new site' procedures from here on out including tailoring the lando file, creating the project with the terminus command and so forth. These instructions are linked in the base README.md in the root of this repository.
  
