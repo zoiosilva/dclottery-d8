@@ -71,7 +71,7 @@
             "@build-theme"
         ],
         "build-theme": [
-            "chdir web/themes/copycat && npm install",
+            "cd web/themes/copycat && npm install",
             "gulp copycatBuild --cwd=web/themes/copycat"
         ],
         "lint": "find web/modules/custom web/themes/copycat -name '*.php' -exec php -l {} \\;",
