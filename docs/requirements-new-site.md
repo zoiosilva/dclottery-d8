@@ -30,13 +30,10 @@ curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/ma
 ```
 
 ### Install Terminus Build Tools Plugin
-You will also need the [build tools plugin](https://github.com/pantheon-systems/terminus-build-tools-plugin/). Until 
-[PR #207](https://github.com/pantheon-systems/terminus-build-tools-plugin/pull/207) is merged, you will need to use Nick
-Wilde's [fork/branch](https://github.com/NickWilde1990/terminus-build-tools-plugin/tree/create-project-build-assets).
+You will also need the [build tools plugin](https://github.com/pantheon-systems/terminus-build-tools-plugin/). You must be using version 2.0.0-beta14 or higher.
 
+TLDR:
 ```
 mkdir -p ~/.terminus/plugins
-git clone git@github.com:NickWilde1990/terminus-build-tools-plugin.git --branch create-project-build-assets ~/.terminus/plugins/terminus-build-tools-plugin
-cd ~/.terminus/plugins/terminus-build-tools-plugin
-composer install
+composer create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:^2.0.0-beta14
 ```
