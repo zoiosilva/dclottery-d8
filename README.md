@@ -79,3 +79,65 @@ watcher to recompile any theme files as needed.
     lando npm install
     lando gulp
 ```
+
+## Debugging
+
+### Deploy Errors
+While deploys are generally very reliable, there are various situations that can cause errors. In pretty much all of
+those, your first step should be checking the failed build log in Circle CI for what the error is.
+
+#### Build was canceled
+Someone canceled the build/deploy through the CircleCI UI.
+
+#### Too long with no output (exceeded 10m0s)
+The most common error, however it is just a time out. Check the previous command run/output in the build log, to find
+out what timed out and hopefully a reason. If you don't immediately see a reason, re-running the task may resolve it if
+it was just a random failure or Pantheon was slow etc.
+
+#### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:
+This means that for some reason the defined SSH Key(s) for the project are not being accepted. Usually this is because
+someone deleted the generated SSH key from their account. To fix this:
+- Generate a new SSH key pair.
+- [Add it to your Pantheon account](https://pantheon.io/docs/ssh-keys)
+- Add it to Circle CI. Go to https://circleci.com/gh/Taoti/[your-project]/edit#ssh, and click `Add SSH Key`, then enter
+`drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
+- If desired, remove the previous ssh key.
+
+### Debugging PHP Issues
+You can use all your your normal debugging methodologies. Lando tooling has been provided for easy XDebug usage as well.
+
+#### XDebug
+XDebug is bad for performance, but amazing for debugging. Therefor, by default, XDebug is turned off. To turn it on run
+`lando xdebug-on`, when done, run `lando xdebug-off`. Configuration necessary for your IDE may vary based on what IDE
+and OS you are using.
+
+##### PHPStorm on Windows
+Fairly straight forward, but can be persnickity about certain files in `USER_HOME$/.lando/config/pantheon` if not setup
+correctly. Here is a functional snippet out of `.idea/workspace.xml` which you can use to easily setup with. (replace
+strings in square brackets as necessary).
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+[snip]
+  <component name="PhpDebugGeneral" notify_if_session_was_finished_without_being_paused="false" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="20abe6a8-f1d0-447f-b950-62df77becb66" name="localhost" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$USER_HOME$/.lando/config/pantheon" remote-root="/srv/includes" />
+          <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\[path to project]\web" selected_validation_type="LOCAL" web_path_to_validation_script="https://[project-name]earth-lab-cu.lndo.site" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      [Default generate include paths which vary per project]
+      <path value="$USER_HOME$/.lando/config/pantheon" />
+    </include_path>
+  </component>
+[snip]
+</project>
+```
