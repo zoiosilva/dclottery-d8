@@ -1,6 +1,22 @@
 # Taoti Drupal 8 Composer
 This repository provides a base Drupal 8 setup for Taoti sites, using current tooling and best practices.
 
+- [New Users](#new-users)
+- [Tooling Overview](#tooling-overview)
+  * [Composer](#composer)
+  * [Node & NPM](#node---npm)
+  * [Gulp](#gulp)
+- [Creating a new site](#creating-a-new-site)
+- [Initialize Site for Development](#initialize-site-for-development)
+- [Debugging](#debugging)
+  * [Deploy Errors](#deploy-errors)
+    + [Build was canceled](#build-was-canceled)
+    + [Too long with no output (exceeded 10m0s)](#too-long-with-no-output--exceeded-10m0s-)
+    + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#codeserverdev-numbers-and-dashes--codeserverdev-numbers-and-dashes-drushin-s-password-)
+  * [Debugging PHP Issues](#debugging-php-issues)
+    + [XDebug](#xdebug)
+      - [PHPStorm on Windows](#phpstorm-on-windows)
+
 ## New Users
 
 If this is your first time creating or developing site built with the Taoti Drupal 8 Composer system, first ensure that
