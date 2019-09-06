@@ -13,6 +13,7 @@ This repository provides a base Drupal 8 setup for Taoti sites, using current to
     + [Build was canceled](#build-was-canceled)
     + [Too long with no output (exceeded 10m0s)](#too-long-with-no-output--exceeded-10m0s-)
     + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#codeserverdev-numbers-and-dashes--codeserverdev-numbers-and-dashes-drushin-s-password-)
+  * [Lando Errors](#lando-errors)
   * [Debugging PHP Issues](#debugging-php-issues)
     + [XDebug](#xdebug)
       - [PHPStorm on Windows](#phpstorm-on-windows)
@@ -119,7 +120,26 @@ someone deleted the generated SSH key from their account. To fix this:
 `drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
 - If desired, remove the previous ssh key.
 
-### Debugging PHP Issues
+### Lando Errors
+If lando has any errors what so ever, the first step to debugging is:
+```bash
+lando stop
+lando start
+```
+If whatever error is still occuring, then try running:
+```bash
+lando restart
+```
+
+Examples of errors that this will fix include:
+```bash
+$ lando gulp
+gulp: 1: gulp: gulp: not found
+$ lando npm install
+npm: 1: npm: npm: not found
+```
+
+### PHP Errors
 You can use all your your normal debugging methodologies. Lando tooling has been provided for easy XDebug usage as well.
 
 #### XDebug
