@@ -7,6 +7,7 @@ This repository provides a base Drupal 8 setup for Taoti sites, using current to
   * [Node & NPM](#node---npm)
   * [Gulp](#gulp)
 - [Creating a new site](#creating-a-new-site)
+- [Creating an old site](#converting-an-old-site)
 - [Initialize Site for Development](#initialize-site-for-development)
 - [Debugging](#debugging)
   * [Deploy Errors](#deploy-errors)
@@ -52,6 +53,9 @@ theme files.
 ## Creating a new site
 See [New Site Instructions](docs/new-site.md) for full details on first time set up for a new Taoti Drupal 8 composer
 site.
+
+## Converting an old site
+see [Site Conversion Instructions](docs/site-conversion.md) for details.
 
 ## Initialize Site for Development
 
