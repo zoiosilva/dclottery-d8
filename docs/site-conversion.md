@@ -39,7 +39,14 @@ with the `-r` flag. A good start for most repositories is `git rm --cached vendo
 
 ## Other Code Updates
 - Copy the latest `.ci` and `.circleci` folders from this repository to your new repo.
+
 - Adjust paths in `.circleci/config.yml` to match the correct theme as needed.
+
+- Update `composer.json` to ensure that at least the same scripts as are in the composer.json are available in the
+new repository.
+
+- Update `composer.json` (and lock) to ensure that the dev dependencies include at minimum the dev dependencies from
+this repo.
 
 ## Non-Pantheon Site (or to create a new Pantheon Site)
 
