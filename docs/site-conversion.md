@@ -78,6 +78,7 @@ access.
     - Under  Environment Variables add:
         - TERMINUS_SITE: The pantheon site machine name (for example `dcpcsb-d8`).
         - TERMINUS_TOKEN: A valid terminus token with current access.
+        - GITHUB_TOKEN: A valid [Github token](https://github.com/settings/tokens)  with at least `repo` permissions.
 
 - Rebuild and fix any standards errors in the custom code when possible.
  
