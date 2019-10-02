@@ -13,7 +13,8 @@ This repository provides a base Drupal 8 setup for Taoti sites, using current to
   * [Deploy Errors](#deploy-errors)
     + [Build was canceled](#build-was-canceled)
     + [Too long with no output (exceeded 10m0s)](#too-long-with-no-output--exceeded-10m0s-)
-    + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#codeserverdev-numbers-and-dashes--codeserverdev-numbers-and-dashes-drushin-s-password-)
+    + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#ssh-key-error)
+    + [Client error: `GET https://api.github.com/...](#github-token-error)
   * [Lando Errors](#lando-errors)
   * [Debugging PHP Issues](#debugging-php-issues)
     + [XDebug](#xdebug)
@@ -115,7 +116,7 @@ The most common error, however it is just a time out. Check the previous command
 out what timed out and hopefully a reason. If you don't immediately see a reason, re-running the task may resolve it if
 it was just a random failure or Pantheon was slow etc.
 
-#### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:
+#### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:{#ssh-key-error}
 This means that for some reason the defined SSH Key(s) for the project are not being accepted. Usually this is because
 someone deleted the generated SSH key from their account. To fix this:
 - Generate a new SSH key pair.
@@ -123,6 +124,16 @@ someone deleted the generated SSH key from their account. To fix this:
 - Add it to Circle CI. Go to https://circleci.com/gh/Taoti/[your-project]/edit#ssh, and click `Add SSH Key`, then enter
 `drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
 - If desired, remove the previous ssh key.
+
+### Client error: `GET https://api.github.com/`:{#github-token-error}
+Full error message will be something like 
+```
+[error]  Client error: `GET https://api.github.com/repos/Taoti/earth-lab-cu/pulls?state=all` resulted in a `404 Not Found` response:
+{"message":"Not Found","documentation_url":"https://developer.github.com/v3/pulls/#list-pull-requests"}
+```
+This error message is quite deceptive. It should actually be a 403 Forbidden usually. It means that the Github Token is not being accepted. To fix this:
+- Generate a new Github Token
+- Delete and Replace existing GITHUB_TOKEN environment variable in the project - go to Go to https://circleci.com/gh/Taoti/[your-project]/edit#env-vars
 
 ### Lando Errors
 If lando has any errors what so ever, the first step to debugging is:
