@@ -13,8 +13,8 @@ This repository provides a base Drupal 8 setup for Taoti sites, using current to
   * [Deploy Errors](#deploy-errors)
     + [Build was canceled](#build-was-canceled)
     + [Too long with no output (exceeded 10m0s)](#too-long-with-no-output--exceeded-10m0s-)
-    + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#ssh-key-error)
-    + [Client error: `GET https://api.github.com/...](#github-token-error)
+    + [codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:](#codeserverdevnumbers-and-dashescodeserverdevnumbers-and-dashesdrushins-password)
+    + [Client error: `GET https://api.github.com/...](#client-error-get-httpsapigithubcom)
   * [Lando Errors](#lando-errors)
   * [Debugging PHP Issues](#debugging-php-issues)
     + [XDebug](#xdebug)
@@ -125,7 +125,7 @@ someone deleted the generated SSH key from their account. To fix this:
 `drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
 - If desired, remove the previous ssh key.
 
-### Client error: `GET https://api.github.com/`:
+#### Client error: `GET https://api.github.com/`:
 Full error message will be something like 
 ```
 [error]  Client error: `GET https://api.github.com/repos/Taoti/earth-lab-cu/pulls?state=all` resulted in a `404 Not Found` response:
