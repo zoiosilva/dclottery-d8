@@ -116,7 +116,8 @@ The most common error, however it is just a time out. Check the previous command
 out what timed out and hopefully a reason. If you don't immediately see a reason, re-running the task may resolve it if
 it was just a random failure or Pantheon was slow etc.
 
-#### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:{#ssh-key-error}
+<a name='ssh-key-error'/>
+#### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:
 This means that for some reason the defined SSH Key(s) for the project are not being accepted. Usually this is because
 someone deleted the generated SSH key from their account. To fix this:
 - Generate a new SSH key pair.
@@ -125,7 +126,8 @@ someone deleted the generated SSH key from their account. To fix this:
 `drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
 - If desired, remove the previous ssh key.
 
-### Client error: `GET https://api.github.com/`:{#github-token-error}
+<a name='github-token-error'/>
+### Client error: `GET https://api.github.com/`:
 Full error message will be something like 
 ```
 [error]  Client error: `GET https://api.github.com/repos/Taoti/earth-lab-cu/pulls?state=all` resulted in a `404 Not Found` response:
@@ -133,7 +135,7 @@ Full error message will be something like
 ```
 This error message is quite deceptive. It should actually be a 403 Forbidden usually. It means that the Github Token is not being accepted. To fix this:
 - Generate a new Github Token
-- Delete and Replace existing GITHUB_TOKEN environment variable in the project - go to Go to https://circleci.com/gh/Taoti/[your-project]/edit#env-vars
+- Delete and Replace existing GITHUB_TOKEN environment variable in the project - go to https://circleci.com/gh/Taoti/[your-project]/edit#env-vars
 
 ### Lando Errors
 If lando has any errors what so ever, the first step to debugging is:
