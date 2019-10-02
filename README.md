@@ -116,7 +116,6 @@ The most common error, however it is just a time out. Check the previous command
 out what timed out and hopefully a reason. If you don't immediately see a reason, re-running the task may resolve it if
 it was just a random failure or Pantheon was slow etc.
 
-<a name='ssh-key-error'/>
 #### codeserver.dev.[numbers and dashes]@codeserver.dev.[numbers and dashes].drush.in's password:
 This means that for some reason the defined SSH Key(s) for the project are not being accepted. Usually this is because
 someone deleted the generated SSH key from their account. To fix this:
@@ -126,7 +125,6 @@ someone deleted the generated SSH key from their account. To fix this:
 `drush.in` for hostname and paste your SSH private key contents, then click `Add SSH Key`.
 - If desired, remove the previous ssh key.
 
-<a name='github-token-error'/>
 ### Client error: `GET https://api.github.com/`:
 Full error message will be something like 
 ```
