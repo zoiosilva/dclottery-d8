@@ -1,6 +1,0 @@
-services:
-  copycat_helper.gesso_twig_extension:
-    arguments: ['@renderer']
-    class: Drupal\copycat_helper\TwigExtension\CopycatExtensionAdapter
-    tags:
-      - { name: twig.extension }

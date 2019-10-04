@@ -1,7 +1,0 @@
----
-title: false
-heading: 'h3'
-wrapper: true
-element: 'div'
-rows:
- - content: 'Row Content'
