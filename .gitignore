@@ -17,6 +17,7 @@
 /web/themes/contrib/
 /web/private/scripts/quicksilver
 
+# :::::::::::::::::::::: cut ::::::::::::::::::::::
 # Pantheon commits a settings.php for environment-specific settings.
 # Place local settings in settings.local.php
 web/sites/*/services*.yml
