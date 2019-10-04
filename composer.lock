@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94302d42858c5d4486dd1d37474cda01",
+    "content-hash": "ba75a29415cb3795d587e27f62856e6a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6716,6 +6716,41 @@
             "time": "2019-03-25T07:48:46+00:00"
         },
         {
+            "name": "taoti/sparkle_motion",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:Taoti/sparkle_motion.git",
+                "reference": "25a64fd32b9a0d4b5baacb022f9763ae1b03a7c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Taoti/sparkle_motion/zipball/25a64fd32b9a0d4b5baacb022f9763ae1b03a7c8",
+                "reference": "25a64fd32b9a0d4b5baacb022f9763ae1b03a7c8",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^8.7"
+            },
+            "type": "drupal-theme",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Taoti",
+                    "homepage": "https://taoti.com"
+                }
+            ],
+            "description": "Taoti's base theme.",
+            "homepage": "https://github.com/Taoti/sparkle_motion",
+            "support": {
+                "source": "https://github.com/Taoti/sparkle_motion",
+                "issues": "https://github.com/Taoti/sparkle_motion/issues"
+            },
+            "time": "2019-10-04T15:51:24+00:00"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.38.4",
             "source": {
@@ -6834,6 +6869,12 @@
                 "type": "git",
                 "url": "https://github.com/webflo/drupal-core-strict.git",
                 "reference": "d1c13f088843cf43ab4fd73407e7420ac321829b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webflo/drupal-core-strict/zipball/d1c13f088843cf43ab4fd73407e7420ac321829b",
+                "reference": "d1c13f088843cf43ab4fd73407e7420ac321829b",
+                "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "1.2.0",
@@ -7433,7 +7474,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {

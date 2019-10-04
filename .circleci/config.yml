@@ -84,8 +84,8 @@ jobs:
 
             - restore_cache:
                   keys:
-                      - theme_cache-{{ checksum "web/themes/copycat/package.json" }}-{{ checksum "web/themes/copycat/package-lock.json" }}
-                      - theme_cache-{{ checksum "web/themes/copycat/package.json" }}
+                      - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}-{{ checksum "web/themes/sparkle_subtheme/package-lock.json" }}
+                      - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}
                       - theme_cache
 
             - run:
@@ -109,11 +109,10 @@ jobs:
                   command: ./.ci/scripts/02-init-site-under-test-clone-existing
 
             - save_cache:
-                  key: theme_cache-{{ checksum "web/themes/copycat/package.json" }}-{{ checksum "web/themes/copycat/package-lock.json" }}
+                  key: theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}-{{ checksum "web/themes/sparkle_subtheme/package-lock.json" }}
                   paths:
-                      - web/themes/copycat/node_modules
-                      - web/themes/copycat/pattern-lab
-                      - web/themes/copycat/css
+                      - web/themes/sparkle_subtheme/node_modules
+                      - web/themes/sparkle_subtheme/css
 
             - run:
                   name: post-test actions

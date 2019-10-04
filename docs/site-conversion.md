@@ -30,8 +30,8 @@ and perform other cleanup tasks.
 you may need to do a merge but that will require analysis/reviewing the specific changes to determine if they are
 desirable.
 
-- Do the same with the `.gitignore` in the custom theme directory copying the one from this repo's copycat theme. This
-will likely need some adjustment to match the current theme's structure if it is an older site.
+- Do the same with the `.gitignore` in the custom theme directory copying the one from this repo's sparkle_subtheme.
+This will likely need some adjustment to match the current theme's structure if it is an older site.
 
 - run `git ls-files -i --exclude-standard` to list all files that are now ignored that were previously committed. For
 each of them confirm they should be removed and remove them with `git rm --cached -r PATHS[]`. You can do whole folders

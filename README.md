@@ -41,15 +41,15 @@ a terminal window.
 applications. JavaScript running outside the browser. [NPM](https://www.npmjs.com/) is the JavaScript package manager
 used to install, share, and distribute code and is used to manage most of the front end dependencies in Taoti projects.
 
-use `lando npm` to run npm in the copycat theme folder - for example `lando npm install`.
+Use `lando npm` to run npm in the sparkle_subtheme theme folder - for example `lando npm install`.
 
 ### Gulp
 [Gulp](https://gulpjs.com/) is a JavaScript task runner that allows us to perform repetitive tasks like minification,
 compilation, unit testing, linting and more. `Gulp` is used to compile Sass, Pattern Lab and watch for file changes
 during development.
 
-Use `lando gulp` to run gulp in the copycat theme folder. `lando gulp` will build and then watch for changes in the
-theme files.
+Use `lando gulp` to run gulp in the sparkle_subtheme theme folder. `lando gulp` will build and then watch for changes in
+the theme files.
 
 ## Creating a new site
 See [New Site Instructions](docs/new-site.md) for full details on first time set up for a new Taoti Drupal 8 composer
