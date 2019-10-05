@@ -3,7 +3,7 @@
   "version": "6.3.0",
   "description": "a simple front-end styling stack.",
   "main": "gulp watch",
-  "private": "false",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/jeffeoff/frontstyle"
@@ -11,13 +11,16 @@
   "author": "Jeff Eoff",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-livereload": "^4.0.1",
+    "gulp": "^4.0",
+    "gulp-autoprefixer": "^7.0",
+    "gulp-livereload": "^4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-sass-lint": "^1.4.0",
-    "gulp-csscomb": "^3.0.8"
-  }
+    "gulp-sourcemaps": "^2.6",
+    "gulp-sass-glob": "^1.1",
+    "gulp-sass-lint": "^1.4",
+    "gulp-csscomb": "^3.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }

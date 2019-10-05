@@ -11,84 +11,81 @@ var cssComb = require('gulp-csscomb');
 
 var sassDest = 'sass/';
 var cssDest = 'css/';
-var sassMain = sassDest +'main.scss';
+var sassMain = sassDest + 'main.scss';
 
 // get all sass files but exclude any vendor sass inside of sass/
-var sassSrc = [sassDest +'**/*.s+(a|c)ss', '!'+ sassDest +'/vendor/**'];
+var sassSrc = [sassDest + '**/*.s+(a|c)ss', '!'+ sassDest +'/vendor/**'];
 
 // same as above, but also exclude main.scss and _settings.scss so
 // comb doesn't insert hard imports for every scss file.
 var sassSrcComb = [sassDest +'**/*.s+(a|c)ss', '!'+ sassMain, '!'+ sassDest +'_settings.scss', '!'+ sassDest +'/vendor/**'];
 
+function css() {
+	return gulp
+			.src( sassMain )
+			.pipe( sassGlob() )
+			.pipe( sourcemaps.init() )
+			.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
+			.pipe( autoprefixer({
+				cascade: false }) )
+			.pipe( sourcemaps.write('./sourcemaps') )
+			.pipe( gulp.dest(cssDest) );
+}
 
-gulp.task('default', ['css']);
-
-
-gulp.task('css', function () {
-	return gulp.src( sassMain )
-    .pipe( sassGlob() )
-		.pipe( sourcemaps.init() )
-		.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
-		.pipe( autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
-		.pipe( gulp.dest(cssDest) );
-});
-
-
-gulp.task('lint', function () {
+function lint() {
 	return gulp.src( sassSrc )
-		.pipe( sassGlob() )
-		.pipe( sassLint({
+			.pipe( sassGlob() )
+			.pipe( sassLint({
 				maxBuffer: 1228800,
-        configFile: './.sass-lint.yml'
-		}) )
-		.pipe( sassLint.format() )
-		.pipe( sassLint.failOnError() )
-		.pipe( sourcemaps.init() )
-		.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
-		.pipe( autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
-		.pipe( gulp.dest(cssDest) );
-});
+				configFile: './.sass-lint.yml'
+			}) )
+			.pipe( sassLint.format() )
+			.pipe( sassLint.failOnError() )
+			.pipe( sourcemaps.init() )
+			.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
+			.pipe( autoprefixer({
+				cascade: false }) )
+			.pipe( sourcemaps.write('./sourcemaps') )
+			.pipe( gulp.dest(cssDest) );
+}
 
+function comb()  {
+	return gulp.src( sassSrcComb )
+			.pipe( sassGlob() )
+			.pipe( cssComb() )
+			.pipe( gulp.dest( sassDest ) );
+}
 
-gulp.task('comb', function() {
-  return gulp.src( sassSrcComb )
-    .pipe( sassGlob() )
-    .pipe( cssComb() )
-    .pipe( gulp.dest( sassDest ) );
-});
-
-
-gulp.task('compile', ['comb', 'lint']);
-
-gulp.task('css-reload', function () {
+function cssReload() {
 	gulp.src(sassMain)
-		.pipe( sassGlob() )
-		.pipe( sourcemaps.init() )
-		.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
-		.pipe( autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false }) )
-		.pipe( sourcemaps.write('./sourcemaps') )
-		.pipe( gulp.dest(cssDest) )
-		.pipe( livereload() );
-});
+			.pipe( sassGlob() )
+			.pipe( sourcemaps.init() )
+			.pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
+			.pipe( autoprefixer({
+				cascade: false }) )
+			.pipe( sourcemaps.write('./sourcemaps') )
+			.pipe( gulp.dest(cssDest) )
+			.pipe( livereload() );
+}
 
-gulp.task('livereload', ['watch-reload']);
-gulp.task('reload', ['watch-reload']);
-
-
-gulp.task('watch', function() {
+function watch() {
 	gulp.watch(sassSrc, { interval: 10 }, ['css']);
-});
+}
 
-
-gulp.task('watch-reload', function() {
+function watchReload() {
 	livereload.listen();
 	gulp.watch(sassSrc, { interval: 10 }, ['css-reload']);
-});
+}
+
+const compile = gulp.series(comb, lint);
+
+exports['css-reload'] = cssReload;
+exports.comb = comb;
+exports.compile = compile;
+exports.watch = watch;
+exports.reload = watchReload;
+exports.livereload = watchReload;
+exports['watch-reload'] = watchReload;
+exports.lint = lint;
+exports.css = css;
+exports.default = css;
