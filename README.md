@@ -6,6 +6,7 @@ This repository provides a base Drupal 8 setup for Taoti sites, using current to
   * [Composer](#composer)
   * [Node & NPM](#node---npm)
   * [Gulp](#gulp)
+  * [Command List](#command-list)
 - [Creating a new site](#creating-a-new-site)
 - [Creating an old site](#converting-an-old-site)
 - [Initialize Site for Development](#initialize-site-for-development)
@@ -50,6 +51,44 @@ during development.
 
 Use `lando gulp` to run gulp in the sparkle_subtheme theme folder. `lando gulp` will build and then watch for changes in
 the theme files.
+
+### Command List:
+  - `lando composer`: Runs composer commands. All standard composer commands and those defined in composer.json.
+    Some custom sub-commands of most interest for day to day usage include:
+    - `lando composer code-sniff`: Locally run all code sniffs as run by the CI.
+    - `lando composer code-sniff-practice`: Run code sniffs with more verbosity.
+    - `lando composer code-fix`: Run PHPCBF to automatically fix any standards errors it can.
+    - `lando composer build-theme`: Builds all theme files (see also `lando gulp`).
+  - `lando config`: Displays the lando configuration
+  - `lando db-export [file]`: Exports database from a database service to a file
+  - `lando db-import <file>`: Imports a dump file into a database service
+  - `lando destroy`: Destroys your app
+  - `lando drupal`: Runs drupal console commands
+  - `lando drush`: Runs drush commands
+  - `lando gulp`: Runs gulp commands
+  - `lando info`: Prints info about your app
+  - `lando init`: Initializes code for use with lando
+  - `lando list`: Lists all running lando apps and containers
+  - `lando logs`: Displays logs for your app
+  - `lando mysql`: Drops into a MySQL shell on a database service
+  - `lando npm`: Runs npm commands
+  - `lando php`: Runs php commands
+  - `lando poweroff`: Spins down all lando related containers
+  - `lando pull`: Pull code, database and/or files from Pantheon
+  - `lando push`: Push code, database and/or files to Pantheon
+  - `lando rebuild`: Rebuilds your app from scratch, preserving data
+  - `lando redis-cli`: Runs redis-cli commands
+  - `lando restart`: Restarts your app
+  - `lando share`: Shares your local site publicly
+  - `lando ssh`: Drops into a shell on a service, runs commands
+  - `lando start`: Starts your app
+  - `lando stop`: Stops your app
+  - `lando switch`: Switch to a different multidev environment
+  - `lando terminus`: Runs terminus commands
+  - `lando varnishadm`: Runs varnishadm commands
+  - `lando version`: Displays the lando version
+  - `lando xdebug-off`: Disable xdebug for nginx.
+  - `lando xdebug-on`: Enable xdebug for nginx.
 
 ## Creating a new site
 See [New Site Instructions](docs/new-site.md) for full details on first time set up for a new Taoti Drupal 8 composer
