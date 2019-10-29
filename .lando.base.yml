@@ -19,10 +19,10 @@ services:
 tooling:
   npm:
     service: appserver
-    cmd: cd /app/web/themes/sparkle_subtheme && npm
+    cmd: cd /app/web/themes/THEME_NAME && npm
   gulp:
     service: appserver
-    cmd: cd /app/web/themes/sparkle_subtheme && gulp
+    cmd: cd /app/web/themes/THEME_NAME && gulp
   xdebug-on:
     service: appserver
     description: Enable xdebug for nginx.

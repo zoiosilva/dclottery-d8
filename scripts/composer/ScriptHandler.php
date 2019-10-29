@@ -103,8 +103,8 @@ class ScriptHandler
     $fs->rename("{$theme_dir}/mimic.libraries.yml", "{$theme_dir}/{$theme}.libraries.yml");
     $files = [
       '.circleci/config.yml',
+      '.lando.base.yml',
       'composer.json',
-      'scripts/composer/ScriptHandler.php',
       "{$theme_dir}/{$theme}.info.yml",
       "{$theme_dir}/{$theme}.libraries.yml",
       "{$theme_dir}/templates/paragraphs/paragraph--accordion.html.twig",
@@ -114,6 +114,12 @@ class ScriptHandler
       $file = file_get_contents($filename);
       file_put_contents($filename, preg_replace("/THEME_NAME|mimic/", $theme, $file));
     }
+    $filename = 'scripts/composer/ScriptHandler.php';
+    $file = file_get_contents($filename);
+
+    // Funny syntax is necessary since we don't want to replace the line itself.
+    file_put_contents($filename, str_replace("/THEME_NAME/" . ".gitignore", "/{$theme}/.gitignore", $file));
+    exec("cd {$theme_dir} && npm install");
   }
 
   public static function setupSite(Event $event) {
@@ -122,5 +128,11 @@ class ScriptHandler
     $site = $io->ask('Provide new site name (for example: ifa-d8): ');
     exec('git remote remove origin');
     exec('terminus build:project:create --pantheon-site="'. $site . '" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ '. $site . ' --preserve-local-repository');
+    file_put_contents('.lando.yml', "
+name: {$site}
+config:
+  site: {$site}
+#  id: PANTHEONSITEID
+    ");
   }
 }
