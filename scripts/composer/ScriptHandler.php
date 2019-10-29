@@ -81,9 +81,46 @@ class ScriptHandler
     file_put_contents($gitignoreFile, $gitignoreContents);
 
     // Fix up .gitignore: remove everything above the "::: cut :::" line
-    $gitignoreFile = getcwd() . '/web/themes/sparkle_subtheme/.gitignore';
+    $gitignoreFile = getcwd() . '/web/themes/THEME_NAME/.gitignore';
     $gitignoreContents = file_get_contents($gitignoreFile);
     $gitignoreContents = preg_replace('/.*::: cut :::*/s', '', $gitignoreContents);
     file_put_contents($gitignoreFile, $gitignoreContents);
+  }
+
+  public static function setupTheme(Event $event) {
+    $io = $event->getIO();
+
+    $theme = $io->ask('Provide new theme name: ');
+
+    $web = getcwd() . '/web';
+    $theme_dir = "{$web}/themes/{$theme}";
+    $io->write('Checking out mimic base theme');
+    exec("git clone git@github.com:Taoti/mimic.git  {$theme_dir}");
+    $io->write("Setting up theme {$theme}");
+    $fs = new Filesystem();
+    $fs->remove("{$theme_dir}/.git");
+    $fs->rename("{$theme_dir}/mimic.info.yml", "{$theme_dir}/{$theme}.info.yml");
+    $fs->rename("{$theme_dir}/mimic.libraries.yml", "{$theme_dir}/{$theme}.libraries.yml");
+    $files = [
+      '.circleci/config.yml',
+      'composer.json',
+      'scripts/composer/ScriptHandler.php',
+      "{$theme_dir}/{$theme}.info.yml",
+      "{$theme_dir}/{$theme}.libraries.yml",
+      "{$theme_dir}/templates/paragraphs/paragraph--accordion.html.twig",
+    ];
+
+    foreach ($files as $filename) {
+      $file = file_get_contents($filename);
+      file_put_contents($filename, preg_replace("/THEME_NAME|mimic/", $theme, $file));
+    }
+  }
+
+  public static function setupSite(Event $event) {
+    self::setupTheme($event);
+    $io = $event->getIO();
+    $site = $io->ask('Provide new site name (for example: ifa-d8): ');
+    exec('git remote remove origin');
+    exec('terminus build:project:create --pantheon-site="'. $site . '" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ '. $site . ' --preserve-local-repository');
   }
 }

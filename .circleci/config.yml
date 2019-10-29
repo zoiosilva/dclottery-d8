@@ -67,12 +67,6 @@ jobs:
                   name: lint php code for syntax errors
                   command: composer -n lint
 
-            - restore_cache:
-                keys:
-                  - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}-{{ checksum "web/themes/sparkle_subtheme/package-lock.json" }}
-                  - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}
-                  - theme_cache
-
             - run:
                   name: check coding standards
                   command: composer -n code-sniff
@@ -90,8 +84,8 @@ jobs:
 
             - restore_cache:
                   keys:
-                      - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}-{{ checksum "web/themes/sparkle_subtheme/package-lock.json" }}
-                      - theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}
+                      - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}-{{ checksum "web/themes/THEME_NAME/package-lock.json" }}
+                      - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}
                       - theme_cache
 
             - run:
@@ -115,10 +109,10 @@ jobs:
                   command: ./.ci/scripts/02-init-site-under-test-clone-existing
 
             - save_cache:
-                  key: theme_cache-{{ checksum "web/themes/sparkle_subtheme/package.json" }}-{{ checksum "web/themes/sparkle_subtheme/package-lock.json" }}
+                  key: theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}-{{ checksum "web/themes/THEME_NAME/package-lock.json" }}
                   paths:
-                      - web/themes/sparkle_subtheme/node_modules
-                      - web/themes/sparkle_subtheme/css
+                      - web/themes/THEME_NAME/node_modules
+                      - web/themes/THEME_NAME/css
 
             - run:
                   name: post-test actions
