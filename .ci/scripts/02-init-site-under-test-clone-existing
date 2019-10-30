@@ -15,9 +15,9 @@ terminus -n env:wake "$TERMINUS_SITE.dev"
 # Create a new multidev site to test on if we haven't pushed to master
 if [[ $TERMINUS_ENV != "dev" ]];
 then
-  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --prepare-for-pantheon
 else
-  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --prepare-for-pantheon
 fi
 
 # Run updatedb to ensure that the cloned database is updated for the new code.
