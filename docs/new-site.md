@@ -33,19 +33,10 @@ git apply permissions.patch
 
 - Update the title of the `README.md` to show that this is a specific site, not the base code.
   
-- Initialize your local Lando instance for this site - for more details see the [primary readme](../README.md) - but use
-the local database in `db/drupal8.sql.gz` and push that to Pantheon as it has some config changes etc that we want to
-use rather than the default Pantheon installed database. 
-
+- Initialize your local Lando instance for this site - for more details see the [primary readme](../README.md) - you
+can pull the installed database from pantheon via:
 ```bash
-lando start
-lando db-import db/drupal8.sql.gz
-lando drush updb -y
-lando drush cex -y
-git add -A
-git commit -m "updated config"
-lando push --files=none --code=none --database=dev
-git push --set-upstream origin master
+lando pull --database=dev --files=none --code=none
 ```
 
 - Make the repository private:
