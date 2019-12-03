@@ -8,20 +8,14 @@ to place your new site in a folder to match the name you're about to use for \[N
 git clone https://github.com/Taoti/drupal8.git my-new-site
 ```
 
-- Remove the git origin remote, this is important to do because the next command we run is going to establish the git
-remote and do everything else for us. 
-```bash
-git remote remove origin
-```
-
 ## Initializing Your New Site
 
 - Run the following command to get everything started with GitHub, CircleCI and Pantheon:
-Please note that "!" (exclamation points) don't work in the `--admin-password field`. `[NEW-SITE-MACHINE-NAME]` must be 
-lower case, hyphenated and cannot contain symbols.
 ```bash
-terminus build:project:create --pantheon-site="District 9" --team="Taoti Creative" --org="Taoti" --admin-email="taotiadmin@taoti.com" --admin-password="Taoti1996" --ci=circleci --git=github ./ NEW-SITE-MACHINE-NAME --preserve-local-repository
+cd my-new-site
+composer setup-new-site
 ```
+and follow prompts.
 
 > Note: if you get a drush permissions error while that is attempting to run, you likely need [drush permissions patch](
 https://github.com/NickWilde1990/terminus-build-tools-plugin/commit/1ed3bfc4d52bc0eafc6b93da8b9cbb4308e28eca). If so,
@@ -32,12 +26,10 @@ curl https://github.com/NickWilde1990/terminus-build-tools-plugin/commit/1ed3bfc
 git apply permissions.patch
 ```
 
-*You will need to contact a Taoti organization repository administrator to 'turn on' CircleCI in it's dashboard. As of today those people are Mark and Chaz.*
 
 ## Post Creation steps
 
-- Edit `.lando.yml` and change the site name to your new site name, and update config values to match your new site's
-pantheon instance.
+- Edit `.lando.yml` and change the site ID to your new site ID from Pantheon (long UUID type string)
 
 - Update the title of the `README.md` to show that this is a specific site, not the base code.
   
