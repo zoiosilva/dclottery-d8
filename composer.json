@@ -7,10 +7,6 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type":"github",
-            "url": "git@github.com:Taoti/sparkle_motion.git"
         }
     ],
     "require": {
@@ -79,7 +75,7 @@
             "gulp css --cwd=web/themes/THEME_NAME"
         ],
         "lint": [
-            "find web/modules/custom web/themes/sparkle_subtheme -name '*.php' -exec php -l {} \\;"
+            "find web/modules/custom web/themes/THEME_NAME -name '*.php' -exec php -l {} \\;"
         ],
         "code-sniff": [
             "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
