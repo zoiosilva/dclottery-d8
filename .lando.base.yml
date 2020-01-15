@@ -17,6 +17,8 @@ services:
       - npm install -global gulp-cli
     build:
       - composer global require "pantheon-systems/terminus:^2"
+      - composer global require consolidation/cgr
+      - cgr mglaman/drupal-check
 
 tooling:
   npm:
