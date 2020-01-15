@@ -19,6 +19,9 @@ services:
       - composer global require "pantheon-systems/terminus:^2"
       - composer global require consolidation/cgr
       - cgr mglaman/drupal-check
+    overrides:
+      volumes:
+        - ${HOME}/.lando/composer_cache:/var/www/.composer
 
 tooling:
   npm:
