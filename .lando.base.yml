@@ -11,10 +11,12 @@ events:
 
 services:
   appserver:
-    run_as_root:
+    build_as_root:
       - curl -sL https://deb.nodesource.com/setup_10.x | bash -
       - apt-get install -y nodejs
       - npm install -global gulp-cli
+    build:
+      - composer global require "pantheon-systems/terminus:^2"
 
 tooling:
   npm:
