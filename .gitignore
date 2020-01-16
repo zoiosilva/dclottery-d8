@@ -21,7 +21,6 @@
 # Pantheon commits a settings.php for environment-specific settings.
 # Place local settings in settings.local.php
 web/sites/*/services*.yml
-!web/sites/*/settings.local.php
 !web/sites/*/services.pantheon.*.yml
 
 # Ignore Drupal's file directory
