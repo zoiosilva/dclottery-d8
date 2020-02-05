@@ -33,10 +33,39 @@ tooling:
   xdebug-on:
     service: appserver
     description: Enable xdebug for nginx.
-    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - docker-php-ext-enable xdebug
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug enabled"
     user: root
   xdebug-off:
     service: appserver
     description: Disable xdebug for nginx.
-    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug disabled"
     user: root
+  xdebug-profiler-on:
+    service: appserver
+    description: Enable xdebug profiler.
+    user: root
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - docker-php-ext-enable xdebug
+      - echo "xdebug.profiler_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - echo "xdebug.profiler_output_dir=/app/profiler" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - mkdir -p /app/profiler
+      - chmod 777 /app/profiler
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug profiler enabled"
+  xdebug-profiler-off:
+    service: appserver
+    description: Disable xdebug profiler (leaves xdebug on).
+    user: root
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - docker-php-ext-enable xdebug
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug profiler disabled"
