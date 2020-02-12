@@ -95,7 +95,13 @@ class ScriptHandler
     $web = getcwd() . '/web';
     $theme_dir = "{$web}/themes/{$theme}";
     $io->write('Checking out mimic base theme');
-    exec("git clone https://github.com/Taoti/mimic.git  {$theme_dir}");
+    
+    // User running this may be set up for SSH or HTTPS so try both.
+    exec("git clone https://github.com/Taoti/mimic.git  {$theme_dir}", $output, $status);
+    if ($status) {
+      exec("git clone git@github.com:Taoti/mimic.git  {$theme_dir}", $output, $status);
+    }
+    
     $io->write("Setting up theme {$theme}");
     $fs = new Filesystem();
     $fs->remove("{$theme_dir}/.git");
