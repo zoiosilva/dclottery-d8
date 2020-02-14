@@ -3,22 +3,8 @@ web_docroot: true
 php_version: 7.3
 
 workflows:
-  deploy_product:
-    after:
-      -
-        type: webphp
-        description: 'Run composer prepare-for-pantheon'
-        script: private/scripts/deploy_product/prepare-for-pantheon.php
-      -
-        type: webphp
-        description: 'Run composer install & drupal-scaffold'
-        script: private/scripts/deploy_product/composer-install.php
-      -
-        type: webphp
-        description: Post to Slack after deploy
-        script: private/scripts/slack_notification.php
   sync_code:
     after:
       - type: webphp
-        description: Clear Drupal cache after code commit
-        script: private/scripts/clear_cache_d8.php
+        description: Warn about risky deploys on CI managed sites.
+        script: private/scripts/dev-deploy.php
