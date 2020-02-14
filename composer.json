@@ -97,18 +97,15 @@
         "setup-new-site":"DrupalProject\\composer\\ScriptHandler::setupSite",
         "post-install-cmd": [
             "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "@update-permissions"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "@update-permissions"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-create-project-cmd": [
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "update-permissions": "chmod 777 vendor/drush/drush/drush.launcher || true"
+        ]
     },
     "extra": {
         "installer-paths": {
