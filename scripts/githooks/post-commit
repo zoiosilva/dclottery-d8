@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Reset environment from pre-commit hook.
+git cherry-pick -nm2 stash
+git reset
+git stash drop

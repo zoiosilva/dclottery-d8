@@ -95,13 +95,13 @@ class ScriptHandler
     $web = getcwd() . '/web';
     $theme_dir = "{$web}/themes/{$theme}";
     $io->write('Checking out mimic base theme');
-    
+
     // User running this may be set up for SSH or HTTPS so try both.
     exec("git clone https://github.com/Taoti/mimic.git  {$theme_dir}", $output, $status);
     if ($status) {
       exec("git clone git@github.com:Taoti/mimic.git  {$theme_dir}", $output, $status);
     }
-    
+
     $io->write("Setting up theme {$theme}");
     $fs = new Filesystem();
     $fs->remove("{$theme_dir}/.git");
@@ -140,5 +140,31 @@ config:
   site: {$site}
 #  id: PANTHEONSITEID
     ");
+  }
+
+  public static function enableGitHooks(Event $event) {
+    if (!ScriptHandler::commandExists('sh')) {
+      echo "sh MUST be in your path for these git hooks to work.";
+      exit(1);
+    }
+    $args = $event->getArguments();
+    copy('scripts/githooks/post-commit', '.git/hooks/post-commit');
+    $pre = 'scripts/githooks/pre-commit';
+    $msg = "Git hooks set up for this project to run automatic standards fixes. ";
+    if ($args[0] === 'lando') {
+      $pre .= '-lando';
+      $msg .= "Running via Lando.";
+    }
+    else {
+      $msg .= "Running in your local environment. See documentation if necessary to confirm requirements.";
+    }
+    copy ($pre, '.git/hooks/pre-commit');
+    echo $msg;
+  }
+
+  public static function commandExists($command) {
+    $test = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? "where" : "which";
+    return is_executable(trim(shell_exec("$test $command")));
+
   }
 }

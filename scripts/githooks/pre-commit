@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Console colors.
+CLEAR='\033[0m'
+BLUE='\033[1;94m'
+GREEN='\033[1;92m'
+RED='\033[0;31m'
+echo -e "${BLUE}Executing .git/hooks/pre-commit... Automatically cleaning up code. Skip this hook by using ${GREEN}git commit --no-verify ${RED}(not recommended)${CLEAR}"
+git stash -q --keep-index
+
+# Apply automatic code standards
+composer auto-fix > /dev/null || true
+
+# Stage updated files
+git add -u

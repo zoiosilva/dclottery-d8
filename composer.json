@@ -91,6 +91,12 @@
         ],
         "style-sniff": "stylelint \"./web/themes/THEME_NAME/**/*.scss\"",
         "style-fix": "stylelint \"./web/themes/THEME_NAME/**/*.scss\" --fix",
+        "auto-fix":[
+            "./vendor/bin/phpcbf -q --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+            "./vendor/bin/phpcbf -q --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,info,txt,md --ignore=node_modules,bower_components,vendor,source ./web/themes/THEME_NAME",
+            "stylelint \"./web/themes/THEME_NAME/**/*.scss\" --fix --quiet"
+        ],
+        "git-hooks":"DrupalProject\\composer\\ScriptHandler::enableGitHooks",
         "d9-check": [
             "drupal-check web/modules/custom web/themes"
         ],
@@ -110,6 +116,9 @@
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
+    },
+    "scripts-descriptions": {
+        "git-hooks": "Add git commit hooks to automatically perform standards fixes. Pass argument `lando` if hooks will be used with Lando.",
     },
     "extra": {
         "installer-paths": {
