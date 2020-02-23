@@ -1,0 +1,47 @@
+{
+  "extends": "/app/web/core/.stylelintrc.json",
+  "plugins": [
+    "stylelint-no-browser-hacks/lib",
+    "stylelint-order"
+  ],
+  "rules": {
+    "max-nesting-depth": [
+      5,
+      {
+        "ignore": [
+          "pseudo-classes"
+        ]
+      }
+    ],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "include",
+          "extend"
+        ]
+      }
+    ],
+    "plugin/no-browser-hacks": null,
+    "number-leading-zero": null,
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreProperties": [
+          "font-family",
+          "/.font.*/"
+        ]
+      }
+    ],
+    "order/properties-order": null,
+    "indentation": null,
+    "length-zero-no-unit": null,
+    "string-quotes": null,
+    "max-empty-lines": null,
+    "declaration-empty-line-before": null,
+    "order/order": null,
+    "at-rule-empty-line-before": null,
+    "block-no-empty": null
+  }
+}
