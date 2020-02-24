@@ -1,5 +1,5 @@
 {
-  "extends": "/app/web/core/.stylelintrc.json",
+  "extends": "./web/core/.stylelintrc.json",
   "plugins": [
     "stylelint-no-browser-hacks/lib",
     "stylelint-order"
