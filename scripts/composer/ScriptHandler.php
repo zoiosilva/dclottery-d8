@@ -90,10 +90,15 @@ class ScriptHandler
   public static function setupTheme(Event $event) {
     $io = $event->getIO();
 
-    $theme = $io->ask('Provide new theme name: ');
+    $theme_name = $io->ask('Provide new theme name: ');
+    $theme_machine_name = preg_replace('/_+/', '_', preg_replace(
+      '/[^a-z0-9_]+/',
+      '_',
+      strtolower($theme_name)
+    ));
 
     $web = getcwd() . '/web';
-    $theme_dir = "{$web}/themes/{$theme}";
+    $theme_dir = "{$web}/themes/{$theme_machine_name}";
     $io->write('Checking out mimic base theme');
 
     // User running this may be set up for SSH or HTTPS so try both.
@@ -102,29 +107,31 @@ class ScriptHandler
       exec("git clone git@github.com:Taoti/mimic.git  {$theme_dir}", $output, $status);
     }
 
-    $io->write("Setting up theme {$theme}");
+    $io->write("Setting up theme {$theme_name}");
     $fs = new Filesystem();
     $fs->remove("{$theme_dir}/.git");
-    $fs->rename("{$theme_dir}/mimic.info.yml", "{$theme_dir}/{$theme}.info.yml");
-    $fs->rename("{$theme_dir}/mimic.libraries.yml", "{$theme_dir}/{$theme}.libraries.yml");
+    $info = "{$theme_dir}/{$theme_machine_name}.info.yml";
+    $fs->rename("{$theme_dir}/mimic.info.yml", $info);
+    $fs->rename("{$theme_dir}/mimic.libraries.yml", "{$theme_dir}/{$theme_machine_name}.libraries.yml");
+    file_put_contents($info, preg_replace("/name: Mimic/", "name: {$theme_name}", file_get_contents($info)));
     $files = [
       '.circleci/config.yml',
       '.lando.base.yml',
       'composer.json',
-      "{$theme_dir}/{$theme}.info.yml",
-      "{$theme_dir}/{$theme}.libraries.yml",
+      $info,
+      "{$theme_dir}/{$theme_machine_name}.libraries.yml",
       "{$theme_dir}/templates/paragraphs/paragraph--accordion.html.twig",
     ];
 
     foreach ($files as $filename) {
       $file = file_get_contents($filename);
-      file_put_contents($filename, preg_replace("/THEME_NAME|mimic/", $theme, $file));
+      file_put_contents($filename, preg_replace("/THEME_NAME|mimic/", $theme_machine_name, $file));
     }
     $filename = 'scripts/composer/ScriptHandler.php';
     $file = file_get_contents($filename);
 
-    // Funny syntax is necessary since we don't want to replace the line itself.
-    file_put_contents($filename, str_replace("/THEME_NAME/" . ".gitignore", "/{$theme}/.gitignore", $file));
+    // Funny syntax is necessary since we don't want to replace this line itself.
+    file_put_contents($filename, str_replace("/THEME_NAME/" . ".gitignore", "/{$theme_machine_name}/.gitignore", $file));
     exec("cd {$theme_dir} && npm install");
   }
 
