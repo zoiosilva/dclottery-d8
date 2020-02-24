@@ -15,10 +15,11 @@ services:
       - curl -sL https://deb.nodesource.com/setup_10.x | bash -
       - apt-get install -y nodejs
       - npm install --global gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
+      - curl -O -L https://github.com/mglaman/drupal-check/releases/download/1.0.14/drupal-check.phar
+      - mv drupal-check.phar /usr/local/bin/drupal-check
+      - chmod +x /usr/local/bin/drupal-check
     build:
       - composer global require "pantheon-systems/terminus:^2"
-      - composer global require consolidation/cgr
-      - cgr mglaman/drupal-check
     overrides:
       volumes:
         - ${HOME}/.lando/composer_cache:/var/www/.composer
