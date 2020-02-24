@@ -35,7 +35,7 @@ tools provided by Lando that you will be working with include:
 [Composer](https://getcomposer.org/) is a dependency manager for PHP that allows us to perform a multitude of tasks;
 everything from creating a Drupal project to declaring libraries and even installing contributed modules. The advantage
 of using Composer is that it allows us to quickly install and update dependencies by simply running a few commands from
-a terminal window.
+a terminal window. 
 
 ### Node & NPM
 [Node](https://nodejs.org/en/) is a cross platform runtime environment for creating server side and networking
@@ -53,42 +53,50 @@ Use `lando gulp` to run gulp in the sparkle_subtheme theme folder. `lando gulp` 
 the theme files.
 
 ### Command List:
-  - `lando composer`: Runs composer commands. All standard composer commands and those defined in composer.json.
-    Some custom sub-commands of most interest for day to day usage include:
-    - `lando composer code-sniff`: Locally run all code sniffs as run by the CI.
-    - `lando composer code-sniff-practice`: Run code sniffs with more verbosity.
-    - `lando composer code-fix`: Run PHPCBF to automatically fix any standards errors it can.
+Lando and our composer file provides a bunch of custom and built in commands. This list some of the commands likely to
+be of use during normal development. Commands sorted alphabetically, with the most important in bold.
+  - `lando composer`: Runs composer commands. All standard composer commands and those defined in composer.json. Has
+  many sub-commands including:
     - `lando composer build-theme`: Builds all theme files (see also `lando gulp`).
+    - `lando composer code-sniff`: Locally run PHP sniffs as run by the CI - see [standards](docs/standards.md).
+    - `lando composer code-fix`: Run PHPCBF to fix any standards/errors it can automatically.
+    - `lando composer d9-check`: Check custom code against Drupal Check for deprecations/errors for Drupal 9.
+    - **`lando composer git-hooks`: Enable git hooks to automatically fix standards/auto-fixable errors before commits.
+    See [standards](docs/standards.md).**
+    - **`lando composer list`: List all composer commands.**
+    - `lando composer style-lint`: Check SCSS for standards/errors.
+    - `lando composer style-fix`: Fix standard/errors in SCSS.
   - `lando config`: Displays the lando configuration
-  - `lando db-export [file]`: Exports database from a database service to a file
-  - `lando db-import <file>`: Imports a dump file into a database service
+  - **`lando db-export [file]`: Exports database from a database service to a file**
+  - **`lando db-import <file>`: Imports a dump file into a database service**
   - `lando destroy`: Destroys your app
   - `lando drupal`: Runs drupal console commands
-  - `lando drush`: Runs drush commands
-  - `lando gulp`: Runs gulp commands
+  - `lando drush`: Runs drush commands has many subcommands including:
+    - **`lando drush cr`: Clears drupal caches.**
+    - `lando drush cim`: Imports configuration from the disk into your local site.
+    - `lando drush cex`: Exports configuration from your local site to disk.
+  - **`lando gulp`: Runs gulp commands - defaults to building the css in the primary theme.**
   - `lando info`: Prints info about your app
-  - `lando init`: Initializes code for use with lando
-  - `lando list`: Lists all running lando apps and containers
-  - `lando logs`: Displays logs for your app
-  - `lando mysql`: Drops into a MySQL shell on a database service
+  - **`lando list`: Lists all running lando apps and containers**
   - `lando npm`: Runs npm commands
   - `lando php`: Runs php commands
   - `lando poweroff`: Spins down all lando related containers
-  - `lando pull`: Pull code, database and/or files from Pantheon
+  - **`lando pull`: Pull code, database and/or files from Pantheon - most commonly as `lando pull -c none -d live -f 
+  none`** to get the latest database from pantheon's live site.
   - `lando push`: Push code, database and/or files to Pantheon
   - `lando rebuild`: Rebuilds your app from scratch, preserving data
-  - `lando redis-cli`: Runs redis-cli commands
   - `lando restart`: Restarts your app
   - `lando share`: Shares your local site publicly
   - `lando ssh`: Drops into a shell on a service, runs commands
-  - `lando start`: Starts your app
-  - `lando stop`: Stops your app
+  - **`lando start`: Starts your app**
+  - **`lando stop`: Stops your app**
   - `lando switch`: Switch to a different multidev environment
-  - `lando terminus`: Runs terminus commands
-  - `lando varnishadm`: Runs varnishadm commands
-  - `lando version`: Displays the lando version
+  - **`lando terminus`: Runs terminus commands. Handy trick, you can use this to run terminus on any site not just your
+   current site.**
   - `lando xdebug-off`: Disable xdebug for nginx.
   - `lando xdebug-on`: Enable xdebug for nginx.
+  - `lando xdebug-profiler-off`: Disable xdebug profiler for nginx.
+  - `lando xdebug-profiler-on`: Enable the xdebug profiler for nginx.
 
 ## Creating a new site
 See [New Site Instructions](docs/new-site.md) for full details on first time set up for a new Taoti Drupal 8 composer

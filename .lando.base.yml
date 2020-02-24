@@ -14,7 +14,7 @@ services:
     build_as_root:
       - curl -sL https://deb.nodesource.com/setup_10.x | bash -
       - apt-get install -y nodejs
-      - npm install -global gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
+      - npm install --global gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
     build:
       - composer global require "pantheon-systems/terminus:^2"
       - composer global require consolidation/cgr

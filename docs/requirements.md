@@ -18,7 +18,7 @@ edition for Docker to run.
 
 ### Install Lando
 Follow the [Lando documentation](https://docs.devwithlando.io/installation/system-requirements.html), Again, choose the
-OS that is applicable for your local environment. This guide is tested with "v3.0.0-rc.16" but latest stable release
+OS that is applicable for your local environment. This guide is tested with "v3.0.0-rc.20" but latest stable release
 should be dandy. On some OS'es (such as Windows) Lando bundles Docker and will walk you through that installation, if it
 doesn't for your OS, you will need to install Docker as well.
 

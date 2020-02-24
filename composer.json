@@ -119,6 +119,9 @@
     },
     "scripts-descriptions": {
         "git-hooks": "Add git commit hooks to automatically perform standards fixes. Pass argument `lando` if hooks will be used with Lando.",
+        "d9-check": "Run drupal-check on custom code to find Deprecations that may affect Drupal 9.",
+        "setup-new-site": "Perform initialization for a new site.",
+        "setup-new-theme":"Used by `setup-new-site` to add new theme to the new site."
     },
     "extra": {
         "installer-paths": {
