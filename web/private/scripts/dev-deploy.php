@@ -10,6 +10,11 @@ if (strstr($committer, 'CI Bot') !== FALSE || $_ENV['PANTHEON_ENVIRONMENT'] !== 
 
 $email = `git log -1 --pretty=%ce`;
 $message = `git log -1 --pretty=%B`;
+
+// Also break early if this is a site creation commit.
+if (strstr($message, 'Build assets for dev.')) {
+  return;
+}
 $hash = `git log -1 --pretty=%h`;
 
 
