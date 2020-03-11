@@ -1,5 +1,5 @@
 # Standards
-Standards. A lot of things can be covered by invoking standards - same as best practices - but without a agreement on
+Standards. A lot of things can be covered by invoking standards - same as best practices - but without an agreement on
 what those are they are quite useless. Agency life both makes standards sometimes challenging - 🕘 is always a concern,
 high turnover, inherited/old sites, lack of documentation etc - but those same reasons makes standards critical. To make
 standards work a few things are needed - documentation, and automation. If standards are a lot of work, it won't happen.
@@ -21,7 +21,7 @@ compliance.
 that are programmatically fixable and report numbers.
 
 Most IDEs can also integrate with PHPCS to provide as you type feedback. Instructions differ per IDE so best to look it
-up for your IDE if interested. Almost all PHP standards are 100% automaticly fixable - the main exception being some
+up for your IDE if interested. Almost all PHP standards are 100% automatically fixable - the main exception being some
 comments, it can't know what your *intent* behind code is.
 
 ## SASS/CSS
