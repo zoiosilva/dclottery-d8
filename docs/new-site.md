@@ -43,3 +43,11 @@ lando pull --database=dev --files=none --code=none
     - go to your new repository (which will have an url like `https://github.com/Taoti/NEW-SITE-MACHINE-NAME`).
     - Click the `settings` tab near the top.
     - Scroll alllll the way down, and click `Make Private` in the Danger Zone and follow prompts.
+
+- Adjust permissions for the project.
+	- go to `https://github.com/Taoti/NEW-SITE-MACHINE-NAME/settings/access` (well with your site's url).
+	- click `Invite teams or people`
+		- Add the `developers` team with the permission level `write`
+		- Add the `dev-managers` team with the permission level `admin`
+	- Permissions should look approximately like this:
+	![Github Permissions form](access.png)
