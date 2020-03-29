@@ -69,12 +69,8 @@ $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 /**
  * Trusted host configuration.
- *
  */
-$settings['trusted_host_patterns'] = array(
-  '^drupal8\.lndo\.site$',
-  '^localhost$',
-);
+$settings['trusted_host_patterns'][] = '.*';
 
 /**
  * Database settings:
@@ -82,7 +78,7 @@ $settings['trusted_host_patterns'] = array(
  * The $databases array specifies the database connection or connections that
  * Drupal may use.  This setting should change based on the environment.
  */
- $databases['default']['default'] = array (
+ /*$databases['default']['default'] = array (
    'database' => 'pantheon',
    'username' => 'pantheon',
    'password' => 'pantheon',
@@ -91,4 +87,4 @@ $settings['trusted_host_patterns'] = array(
    'port' => '3306',
    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
    'driver' => 'mysql',
- );
+ );*/
