@@ -75,7 +75,7 @@ access.
 - Go to settings
     - Under `SSH Permissions` Add a SSH _private_ key with access to the Pantheon site (you can create a new one or use
     an existing one). Use `drush.in` as the hostname.
-   - SSH is require it to be in the RSA format - https://stackoverflow.com/questions/54994641/openssh-private-key-to-rsa-private-key
+   - The required SSH private key is require it to be in the RSA format - https://stackoverflow.com/questions/54994641/openssh-private-key-to-rsa-private-key
     - Under  Environment Variables add:
         - TERMINUS_SITE: The pantheon site machine name (for example `dcpcsb-d8`).
         - TERMINUS_TOKEN: A valid terminus token with current access.
