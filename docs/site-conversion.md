@@ -1,4 +1,4 @@
-# Converting a Site from D8 to this repository's structure
+# Converting a Site from D8 to this repository's structure (to github based hosting/with CI)
 There are many exact structures that a D8 site can be in. These instructions should match most cases but there are
 certainly outliers that will be more complicated and or have differences that make it difficult to convert.
 
@@ -21,6 +21,8 @@ If this isn't a composer managed site already, you will need to move it to being
 
 - Add the modules that do exist in the source repository utilizing `composer require drupal/[module_name]`
   - You can nest several `drupal/[module_name]` in the same `composer require` statement
+  
+Alternatively, you can generate a composer.json file with all the Drupal dependencies added using https://github.com/grasmash/composerize-drupal , once done compare the generated file with the one in this repo and make the necessary adjustments.
 
 ## Cleaning the repository
 The repository almost certainly has a lot of files committed that shouldn't be. So we need to adjust `.gitignore` files
