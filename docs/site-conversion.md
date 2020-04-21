@@ -70,7 +70,8 @@ pantheon ID/name.
 - Adjust repository settings on Github, under settings -&gt; Collaboration &amp; Teams, add `Developers` team with R&W
 access.
 
-- Go to [CircleCI](https://circleci.com/add-projects/gh/Taoti) and add as a Linux Project.
+- Go to [CircleCI](https://circleci.com/add-projects/gh/Taoti) and add as a Linux Project. 
+You can ignore the config.yml template since that's already added to the github repo.
 
 - Leave all configurations defaults and set to build now (it will fail)
 
