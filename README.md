@@ -1,14 +1,15 @@
 # Taoti Drupal 8 Composer
 This repository provides a base Drupal 8 setup for Taoti sites, using current tooling and best practices.
 
+- [Creating a new site](docs/new-site.md)
+- [Converting from an old non-ci site](docs/site-conversion.md)
+- [Composer Based CI Upstream](docs/composer-based-custom-upstream.md)
 - [New Users](#new-users)
 - [Tooling Overview](#tooling-overview)
   * [Composer](#composer)
   * [Node & NPM](#node---npm)
   * [Gulp](#gulp)
   * [Command List](#command-list)
-- [Creating a new site](#creating-a-new-site)
-- [Creating an old site](#converting-an-old-site)
 - [Initialize Site for Development](#initialize-site-for-development)
 - [Debugging](#debugging)
   * [Deploy Errors](#deploy-errors)
@@ -97,13 +98,6 @@ be of use during normal development. Commands sorted alphabetically, with the mo
   - `lando xdebug-on`: Enable xdebug for nginx.
   - `lando xdebug-profiler-off`: Disable xdebug profiler for nginx.
   - `lando xdebug-profiler-on`: Enable the xdebug profiler for nginx.
-
-## Creating a new site
-See [New Site Instructions](docs/new-site.md) for full details on first time set up for a new Taoti Drupal 8 composer
-site.
-
-## Converting an old site
-see [Site Conversion Instructions](docs/site-conversion.md) for details.
 
 ## Initialize Site for Development
 
