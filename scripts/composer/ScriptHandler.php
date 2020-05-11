@@ -120,7 +120,9 @@ class ScriptHandler
       'composer.json',
       $info,
       "{$theme_dir}/{$theme_machine_name}.libraries.yml",
-      "{$theme_dir}/templates/paragraphs/paragraph--accordion.html.twig",
+      "{$theme_dir}/site.webmanifest",
+      "{$theme_dir}/templates/content/node--page--full.html.twig",
+      "{$theme_dir}/templates/layout/html.html.twig"
     ];
 
     foreach ($files as $filename) {
