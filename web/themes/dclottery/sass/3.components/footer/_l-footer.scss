@@ -1,0 +1,9 @@
+.l-footer {
+  @include layout-constrain();
+}
+
+.l-footer__inner {
+  @include flex-row();
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

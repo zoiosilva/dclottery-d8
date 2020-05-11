@@ -1,0 +1,12 @@
+@mixin fluid-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin fluid-image-fill {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}

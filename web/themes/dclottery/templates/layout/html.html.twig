@@ -1,0 +1,91 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+
+    {#
+      SETUP: GENERATE FAVICONS
+      This is a good place to do it:  https://favicon.io/favicon-converter/
+
+      1. Place favicon.ico and site.webmanifest in this theme's root directory.
+      
+      2. Place the other favicons in img/favicons/ directory.
+      
+      3. Edit the site.webmanifest (change the src: properties to point to favicons, 
+        ie: src:android-chrome-192x192.png becomes src:/themes/dclottery/img/favicons/android-chrome-192x192.png
+        Look at the current site.webmanifest for guidance.
+
+        There are typically two android icons, one for 192x192 and one for 512x512, 
+        so get BOTH src: properties in the manifest. 
+
+        It's also smart to update the theme_color and background_color properties to better
+        follow the design too.
+
+      4. Uncomment the following lines:
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ directory }}/img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ directory }}/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ directory }}/img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="{{ directory }}/site.webmanifest">
+    #}    
+
+    {#
+      SETUP: ADD FONT LINKS HERE
+    #}    
+    
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+
+  <body{{ attributes.addClass(body_classes) }}>
+    {#
+      Keyboard navigation/accessibility link to main content section in
+      page.html.twig.
+    #}
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    {{ page_top }}
+
+    {{ page }}
+
+    {{ page_bottom }}
+    
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>

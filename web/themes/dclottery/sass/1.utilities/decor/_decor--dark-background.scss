@@ -1,0 +1,25 @@
+// for sections that should have dark
+// backgrounds.
+@mixin decor--dark-background() {
+  color: $color--on-dark--text;
+  background-color: $color--on-dark--background;
+}
+
+
+.decor--dark-background {
+  @include decor--dark-background;
+
+  // overrides for other components
+  // that need to have different colors
+  // when inside of a dark background
+
+  a {
+    color: $color--on-dark--link;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color--on-dark--link-hover;
+    }
+  }
+}

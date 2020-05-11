@@ -1,0 +1,14 @@
+.page-title {
+  @include heading-style--1;
+  @include decor--heading-line;
+  text-transform: uppercase;
+	font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  padding: 1rem;
+  text-align: center;
+
+  @media (max-width: $width--m) {
+    font-size: 2rem;
+  }
+}

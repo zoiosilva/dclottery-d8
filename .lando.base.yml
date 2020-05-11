@@ -29,10 +29,10 @@ services:
 tooling:
   npm:
     service: appserver
-    cmd: cd /app/web/themes/THEME_NAME && npm
+    cmd: cd /app/web/themes/dclottery && npm
   gulp:
     service: appserver
-    cmd: cd /app/web/themes/THEME_NAME && gulp
+    cmd: cd /app/web/themes/dclottery && gulp
   xdebug-on:
     service: appserver
     description: Enable xdebug for nginx.

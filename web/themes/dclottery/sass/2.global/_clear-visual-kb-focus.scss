@@ -1,0 +1,30 @@
+// For Accessibility
+//
+// CLEAR VISUAL KEYBOARD FOCUS
+//
+// This relies on what-input.js:
+//
+// suppress focus ring on form controls
+// for mouse and touch users.
+//
+[data-whatintent='mouse'] *:focus,
+[data-whatintent='touch'] {
+  outline: none;
+}
+
+// force clear visual focus for keyboard
+// navigation.
+[data-whatintent='keyboard'] *:focus {
+  outline: 2px dashed $color--clear-visual-focus;
+  outline-offset: 2px;
+}
+
+// special overrides for checkboxes
+// and radio buttons.
+[data-whatintent='keyboard'] {
+  .form-radio:focus + label:before,
+  .form-checkbox:focus + label:before {
+    outline: 2px dashed $color--clear-visual-focus;
+    outline-offset: 2px;
+  }
+}

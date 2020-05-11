@@ -1,0 +1,35 @@
+#  Global library
+global:
+  version: 1.0
+  css:
+    theme:
+      css/main.css: { weight: -10 }
+  js:
+    js/main.js: { minified: false, weight: -10 }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+
+normalize:
+  remote: https://github.com/necolas/normalize.css
+  version: "8.0.1"
+  license:
+    name: MIT
+    url: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+    gpl-compatible: true
+  css:
+    base:
+      css/vendor/normalize.css: { weight: -10 }
+
+
+what-input:
+  remote: https://github.com/ten1seven/what-input
+  version: "5.0.5"
+  license:
+    name: MIT
+    url: https://github.com/ten1seven/what-input/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    js/vendor/what-input.min.js: { minified: true, weight: -5 }
+

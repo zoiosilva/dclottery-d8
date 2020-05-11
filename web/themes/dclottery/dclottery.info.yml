@@ -1,0 +1,29 @@
+name: dclottery
+type: theme
+description: Taoti's starter theme for new Drupal builds.
+package: Other
+core: 8.x
+base theme: classy
+hidden: false
+
+
+libraries:
+  - dclottery/global
+  - dclottery/what-input
+
+
+regions:
+  header: 'Header'
+  precontent: 'Precontent'
+  content: 'Content'
+  footer: 'Footer'
+  hidden: 'Hidden'
+
+
+libraries-override:
+  # Remove IE 9 compatibility shiv
+  core/classList: false
+  # Remove IE 8 compatibility shiv
+  core/html5shiv: false
+  # Provide our own, more recent version of normalize.css
+  core/normalize: dclottery/normalize

@@ -1,0 +1,23 @@
+h1 {
+  @include heading-style--1;
+}
+
+h2 {
+  @include heading-style--2;
+}
+
+h3 {
+  @include heading-style--3;
+}
+
+h4 {
+  @include heading-style--4;
+}
+
+h5 {
+  @include heading-style--5;
+}
+
+h6 {
+  @include heading-style--6;
+}

@@ -67,8 +67,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}-{{ checksum "web/themes/THEME_NAME/package-lock.json" }}
-            - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}
+            - theme_cache-{{ checksum "web/themes/dclottery/package.json" }}-{{ checksum "web/themes/dclottery/package-lock.json" }}
+            - theme_cache-{{ checksum "web/themes/dclottery/package.json" }}
             - theme_cache
       - run:
           name: check coding standards
@@ -91,8 +91,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}-{{ checksum "web/themes/THEME_NAME/package-lock.json" }}
-            - theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}
+            - theme_cache-{{ checksum "web/themes/dclottery/package.json" }}-{{ checksum "web/themes/dclottery/package-lock.json" }}
+            - theme_cache-{{ checksum "web/themes/dclottery/package.json" }}
             - theme_cache
 
       - run:
@@ -116,10 +116,10 @@ jobs:
           command: ./.ci/scripts/02-init-site-under-test-clone-existing
 
       - save_cache:
-          key: theme_cache-{{ checksum "web/themes/THEME_NAME/package.json" }}-{{ checksum "web/themes/THEME_NAME/package-lock.json" }}
+          key: theme_cache-{{ checksum "web/themes/dclottery/package.json" }}-{{ checksum "web/themes/dclottery/package-lock.json" }}
           paths:
-            - web/themes/THEME_NAME/node_modules
-            - web/themes/THEME_NAME/css
+            - web/themes/dclottery/node_modules
+            - web/themes/dclottery/css
 
       - run:
           name: post-test actions

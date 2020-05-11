@@ -1,0 +1,69 @@
+.form-checkbox {
+  opacity: 0;
+  margin-right: 7px;
+
+  + label {
+    position: relative;
+    display: inline-block;
+    line-height: 1.3333;
+    padding-top: 0.175em;
+    cursor: pointer;
+    
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 2px;
+      left: -26px;
+      border-radius: 0;
+      border: 1px solid $color--link;
+      background-color: $color--white;
+      width: 16px;
+      height: 16px;
+    }
+    
+    &:after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      left: -25px;
+      top: 3px;
+      border-radius: 0;
+      width: 14px;
+      height: 14px;
+      background-color: $color--white;
+      background-size: 12px;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  &:checked + label:after {
+    background-color: $color--link;
+    background-image: url('../img/icons/check.svg');
+  }
+
+  &[disabled] + label {
+    cursor: inherit;
+
+    &:before {
+      border: 1px solid $color--disabled-text;
+      background-color: $color--disabled-background;
+    }
+
+    &:after {
+      background-color: $color--disabled-background;
+    }
+  }
+
+  &[disabled]:checked + label:after {
+    background-color: $color--disabled-background !important;
+    background-image: url('../img/icons/check.svg') !important;
+  }
+}
+
+// on dark backgrounds
+.decor--background-dark .form-checkbox:checked + label:after {
+  background-color: $color--white;
+  background-image: url('../img/icons/check--gray-dark.svg');
+}

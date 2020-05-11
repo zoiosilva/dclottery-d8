@@ -1,0 +1,36 @@
+.block--branding {
+  @include flex-row;
+
+  .block--branding__logo {
+    display: block;
+    height: 50px;
+    width: 50px;
+  
+    > img {
+      @include fluid-image-fill();
+    }
+  }
+
+  .block--branding__name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+
+    > a{
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }  
+    }
+  }
+
+  .block--branding__name,
+  .block--branding__slogan {
+    font-family: $font--heading;
+    margin: 1rem;
+  }
+  
+}

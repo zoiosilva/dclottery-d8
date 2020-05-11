@@ -1,0 +1,60 @@
+.form-select {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1em;
+  height: 2em;
+  padding: 0.25em 1.5em 0.25em 0.5em;
+  max-width: 100%;
+  margin: 0;
+  border: 1px solid $color--black;
+  border-radius: 0;
+  box-shadow: none;
+  appearance: none;
+  background-color: $color--white;
+  background-image: url('../img/icons/caret-down--black.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.5em top 50%;
+  background-size: 0.75em;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+
+  &:hover,
+  &:focus {
+    color: $color--link;
+    border-color: $color--black;
+    background-image: url('../img/icons/caret-down--orange.svg');
+  }
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba($color--black, 0.1);
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+    background-color: $color--white;
+  }
+
+  &:active {
+    background-image: url('../img/icons/caret-up--orange.svg');
+  }
+
+
+  option {
+    font-weight: 400;
+  }
+
+
+  &[disabled] {
+    color: $color--disabled-text !important;
+    border-color: $color--disabled-text !important;
+    background-color: $color--disabled-background !important;
+    box-shadow: none !important;
+    background-image: url('../img/icons/caret-down--gray.svg') !important;
+  }
+}

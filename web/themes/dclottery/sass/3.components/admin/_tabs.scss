@@ -1,0 +1,85 @@
+ul.tabs {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.25rem;
+  width: 100%;
+  background-color: $color--gray-white;
+
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  @media print {
+    display: none;
+  }
+
+
+  li {
+    margin: 0;
+
+    &:first-child a {
+      border-bottom-left-radius: 3px;
+      border-left: 0;
+      border-top-left-radius: 3px;
+    }
+
+    &:last-child a {
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+
+  a {
+    font-family: $font--button;
+    font-size: 0.8em;
+    line-height: 1.2;
+    background-color: $color--link;
+    border-color: lighten($color--link, 5%);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-radius: 0;
+    color: $color--white;
+    display: block;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition:
+      color $transition-speed ease-out,
+      background-color $transition-speed ease-out,
+      border-color $transition-speed ease-out;
+
+    &:visited {
+      background-color: $color--link;
+      border-color: lighten($color--link, 8%);
+      color: $color--white;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $color--link-hover;
+      border-color: $color--link-hover;
+      color: $color--white;
+    }
+
+    &.is-active {
+      background-color: $color--gray-light;
+      border-color: $color--gray-light;
+      color: $color--black;
+      cursor: default;
+
+      &:hover {
+        color: $color--black;
+        text-decoration: none;
+      }
+    }
+  }
+}

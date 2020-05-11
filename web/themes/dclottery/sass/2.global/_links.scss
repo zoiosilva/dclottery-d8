@@ -1,0 +1,14 @@
+a {
+  color: $color--link;
+  text-decoration: none;
+  transition: 
+    color $transition-speed ease-out,
+    text-decoration $transition-speed ease-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color--link-hover;
+    text-decoration: underline;
+  }
+}

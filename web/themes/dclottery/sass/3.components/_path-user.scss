@@ -1,0 +1,5 @@
+// a general override for all
+// user pages.
+.path-user .l-content {
+  @include layout-constrain($width--content-reading);
+}

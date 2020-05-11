@@ -1,0 +1,104 @@
+// ---
+// SETTINGS
+// ---
+
+/*
+  ALL global variables should be collected here.
+*/
+
+
+// WIDTHS
+// --
+
+  // common breakpoints.
+  $width--xs: 350px; // small phone breakpoing (iPhone 5, etc.)
+  $width--s: 600px; // general phone breakpoint
+  $width--m: 800px; // general tablet portrait breakpoint
+  $width--l: 1100px; // general tablet landscape breakpoint
+  $width--xl: 1366px; // general design max
+
+  // semantic widths
+  // assume any "content" widths will also get horizontal padding/gutters.
+  $width--content-max: $width--xl;
+  $width--content-reading: $width--m;
+
+  // wherever the header and main nav change
+  // from larger to smaller versions.
+  $width--header-collapse: $width--l;
+
+
+
+// FONTS
+// ---
+  // font-family variables
+  $font--sans: "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Open Sans", "Source Sans Pro", "Droid Serif", Arial, "Segoe UI", sans-serif;
+  $font--serif: "Adobe Garamond Pro", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+
+  // semantic fonts
+  $font--body: $font--serif;
+  $font--heading: $font--sans;
+  $font--button: $font--sans;
+
+
+
+// COLOR
+// ---
+
+  // raw colors
+  $color--white: #fff;
+  $color--gray-white: #eaebec; 
+  $color--gray-light: #aaabac;
+  $color--gray: #7a7b7c;
+  $color--gray-dark: #2a2b2c;
+  $color--black: #000;
+
+  $color--orange: #ed3100;
+  $color--orange-light: #fd5100;
+  $color--sand: #faf5e8;
+  $color--purple: #8e0085;
+
+
+  // semantic colors
+  $color--background: $color--white;
+  $color--text: $color--gray-dark;
+  $color--outer-frame: $color--gray-white;
+
+  $color--link: $color--orange;
+  $color--link-hover: $color--orange-light;
+
+  $color--clear-visual-focus: $color--purple;
+
+  $color--button-text: $color--link;
+  $color--button-background: transparent;
+  $color--button-text--hover: $color--white;
+  $color--button-background--hover: $color--link;
+
+  $color--disabled-text: $color--gray-light;
+  $color--disabled-background: $color--gray-white;
+
+  $color--on-dark--background: $color--gray-dark;
+  $color--on-dark--text: $color--white;
+  $color--on-dark--link: $color--link;
+  $color--on-dark--link-hover: $color--link-hover;
+
+  $color--unpublished-node: $color--sand;
+
+
+// LAYOUT & MISC
+// ---
+
+  // layout variables
+  $base-font-size: 18px;
+
+  // default padding for sections,
+  // and other full-width containers.
+  $padding--horizontal: 2rem;
+  $padding--vertical: 2rem;
+
+  // default amount of space 
+  // between items in a grid.
+  $grid-gutter: 1rem;
+
+  // default speed of animation
+  // transitions.
+  $transition-speed: 0.15s

@@ -81,7 +81,7 @@ class ScriptHandler
     file_put_contents($gitignoreFile, $gitignoreContents);
 
     // Fix up .gitignore: remove everything above the "::: cut :::" line
-    $gitignoreFile = getcwd() . '/web/themes/THEME_NAME/.gitignore';
+    $gitignoreFile = getcwd() . '/web/themes/dclottery/.gitignore';
     $gitignoreContents = file_get_contents($gitignoreFile);
     $gitignoreContents = preg_replace('/.*::: cut :::*/s', '', $gitignoreContents);
     file_put_contents($gitignoreFile, $gitignoreContents);

@@ -1,0 +1,9 @@
+.l-header {
+  @include layout-constrain();
+}
+
+.l-header__inner {
+  @include flex-row();
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

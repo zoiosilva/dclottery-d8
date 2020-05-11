@@ -72,30 +72,30 @@
             "@build-theme"
         ],
         "build-theme": [
-            "cd web/themes/THEME_NAME && npm install",
-            "gulp css --cwd=web/themes/THEME_NAME"
+            "cd web/themes/dclottery && npm install",
+            "gulp css --cwd=web/themes/dclottery"
         ],
         "lint": [
-            "find web/modules/custom web/themes/THEME_NAME -name '*.php' -exec php -l {} \\;"
+            "find web/modules/custom web/themes/dclottery -name '*.php' -exec php -l {} \\;"
         ],
         "code-sniff": [
             "./vendor/bin/phpcs ./web/modules/custom",
-            "./vendor/bin/phpcs ./web/themes/THEME_NAME"
+            "./vendor/bin/phpcs ./web/themes/dclottery"
         ],
         "code-sniff-practice": [
             "./vendor/bin/phpcs ./web/modules/custom",
-            "./vendor/bin/phpcs ./web/themes/THEME_NAME"
+            "./vendor/bin/phpcs ./web/themes/dclottery"
         ],
         "code-fix": [
             "./vendor/bin/phpcbf ./web/modules/custom",
-            "./vendor/bin/phpcbf,source ./web/themes/THEME_NAME"
+            "./vendor/bin/phpcbf,source ./web/themes/dclottery"
         ],
-        "style-sniff": "stylelint \"./web/themes/THEME_NAME/**/*.scss\"",
-        "style-fix": "stylelint \"./web/themes/THEME_NAME/**/*.scss\" --fix",
+        "style-sniff": "stylelint \"./web/themes/dclottery/**/*.scss\"",
+        "style-fix": "stylelint \"./web/themes/dclottery/**/*.scss\" --fix",
         "auto-fix":[
             "./vendor/bin/phpcbf -q ./web/modules/custom",
-            "./vendor/bin/phpcbf -q ./web/themes/THEME_NAME",
-            "stylelint \"./web/themes/THEME_NAME/**/*.scss\" --fix --quiet"
+            "./vendor/bin/phpcbf -q ./web/themes/dclottery",
+            "stylelint \"./web/themes/dclottery/**/*.scss\" --fix --quiet"
         ],
         "git-hooks":"DrupalProject\\composer\\ScriptHandler::enableGitHooks",
         "d9-check": [

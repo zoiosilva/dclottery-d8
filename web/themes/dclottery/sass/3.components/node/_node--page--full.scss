@@ -1,0 +1,12 @@
+// basic page - full page
+.node--page--full {
+  // specific basic page full page styling ...
+
+  // overrides for blocks, paragraphs, etc.
+  // with specific styling when on these
+  // node types.
+
+  .node__content {
+    @include layout-constrain();
+  }
+}
